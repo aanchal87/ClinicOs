@@ -1,5 +1,6 @@
 'use client';
 
+<<<<<<< HEAD
 import React, { useEffect, useState } from 'react';
 import { useGallery, usePatients, useUploadClinicalPhoto } from '@/shared/hooks/useClinicApi';
 import { Image as ImageIcon, Sliders, Calendar, Info, UploadCloud, Images } from 'lucide-react';
@@ -136,6 +137,46 @@ export default function GalleryPage() {
           {/* Gallery Directory Index (Left 1 Column) */}
           <div className="bg-clinic-surface border border-clinic-border/80 rounded-2xl p-4 shadow-sm shadow-[#123b37]/[0.025] flex flex-col gap-4 lg:col-span-1">
               <h3 className="text-[11px] font-semibold uppercase tracking-[0.12em] text-clinic-text-secondary border-b border-clinic-border pb-3">Treatment history</h3>
+=======
+import React, { useState } from 'react';
+import { useGallery, usePatients } from '@/shared/hooks/useClinicApi';
+import { Image as ImageIcon, Sliders, Calendar, User, Info, Plus } from 'lucide-react';
+import Badge from '@/shared/components/ui/Badge';
+import Spinner from '@/shared/components/ui/Spinner';
+
+export default function GalleryPage() {
+  const { data: gallery = [], isLoading } = useGallery();
+  const { data: patients = [] } = usePatients();
+
+  const [activeGalleryId, setActiveGalleryId] = useState<string | null>('g-1');
+  const [sliderVal, setSliderVal] = useState<number>(50); // percentage of 'before' visible
+
+  const activeItem = gallery.find(g => g.id === activeGalleryId);
+
+  return (
+    <div className="flex flex-col gap-8">
+      {/* Title */}
+      <div>
+        <h1 className="text-2xl font-bold tracking-tight text-clinic-text-primary">Treatment Recovery Gallery</h1>
+        <p className="text-sm text-clinic-text-secondary mt-1">
+          Review clinical photography files, and compare before & after patient treatments using interactive sliders.
+        </p>
+      </div>
+
+      {isLoading ? (
+        <div className="py-20 flex justify-center"><Spinner size="lg" /></div>
+      ) : gallery.length === 0 ? (
+        <div className="bg-clinic-surface border border-clinic-border rounded-clinic-14 p-16 text-center text-clinic-text-secondary flex flex-col items-center gap-2 justify-center">
+          <ImageIcon className="h-10 w-10 text-clinic-border" />
+          <p className="text-sm font-semibold">No gallery images uploaded yet</p>
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 items-start max-w-[1800px] w-full">
+          
+          {/* Gallery Directory Index (Left 1 Column) */}
+          <div className="bg-clinic-surface border border-clinic-border rounded-clinic-14 p-4 shadow-sm flex flex-col gap-4">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-clinic-text-secondary border-b border-clinic-border pb-3">Treatment Folders</h3>
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
             
             <div className="flex flex-col gap-2.5">
               {gallery.map(item => (
@@ -144,12 +185,20 @@ export default function GalleryPage() {
                   onClick={() => setActiveGalleryId(item.id)}
                   className={`p-3.5 border rounded-clinic-10 cursor-pointer flex gap-3.5 items-center transition-all ${
                     activeGalleryId === item.id 
+<<<<<<< HEAD
                       ? 'bg-clinic-accent/[0.06] border-clinic-accent/30 shadow-sm' 
+=======
+                      ? 'bg-clinic-accent/5 border-clinic-accent/30 shadow-inner' 
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
                       : 'bg-clinic-bg border-clinic-border hover:bg-clinic-surface'
                   }`}
                 >
                   <div className="h-12 w-12 rounded-clinic-6 overflow-hidden border border-clinic-border bg-clinic-bg shrink-0">
+<<<<<<< HEAD
                   <img src={getClinicalPhotoUrl(item.afterUrl)} alt="thumbnail" className="h-full w-full object-cover" />
+=======
+                    <img src={item.afterUrl} alt="thumbnail" className="h-full w-full object-cover" />
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
                   </div>
                   <div className="flex flex-col min-w-0">
                     <span className="text-sm font-bold text-clinic-text-primary truncate">{item.title}</span>
@@ -164,12 +213,20 @@ export default function GalleryPage() {
           </div>
 
           {/* Interactive Slider Workspace (Right 2 Columns) */}
+<<<<<<< HEAD
           <div className="lg:col-span-2 flex flex-col gap-4 sm:gap-6 min-w-0">
+=======
+          <div className="xl:col-span-2 flex flex-col gap-6">
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
             {activeItem ? (
               <div className="flex flex-col gap-6">
                 
                 {/* Active Comparison Canvas */}
+<<<<<<< HEAD
                 <div className="bg-clinic-surface border border-clinic-border/80 rounded-2xl p-4 sm:p-6 shadow-sm shadow-[#123b37]/[0.025] flex flex-col gap-6">
+=======
+                <div className="bg-clinic-surface border border-clinic-border rounded-clinic-14 p-6 shadow-sm flex flex-col gap-6">
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
                   <div className="flex justify-between items-center border-b border-clinic-border pb-3">
                     <div className="flex flex-col">
                       <h2 className="text-base font-bold text-clinic-text-primary">{activeItem.title}</h2>
@@ -179,10 +236,17 @@ export default function GalleryPage() {
                   </div>
 
                   {/* Image Diff Slider container */}
+<<<<<<< HEAD
                   <div className="relative w-full max-w-xl mx-auto aspect-[4/3] sm:aspect-[3/2] max-h-[400px] border border-clinic-border rounded-xl sm:rounded-2xl overflow-hidden select-none shadow-lg bg-zinc-950">
                     {/* Before Image (Bottom Layer) */}
                     <img 
                       src={getClinicalPhotoUrl(activeItem.beforeUrl)} 
+=======
+                  <div className="relative w-full max-w-xl mx-auto h-[400px] border border-clinic-border rounded-clinic-14 overflow-hidden select-none shadow-lg bg-zinc-950">
+                    {/* Before Image (Bottom Layer) */}
+                    <img 
+                      src={activeItem.beforeUrl} 
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
                       alt="Before treatment"
                       className="absolute inset-0 w-full h-full object-cover pointer-events-none"
                     />
@@ -196,7 +260,11 @@ export default function GalleryPage() {
                       style={{ clipPath: `inset(0 0 0 ${sliderVal}%)` }}
                     >
                       <img 
+<<<<<<< HEAD
                         src={getClinicalPhotoUrl(activeItem.afterUrl)} 
+=======
+                        src={activeItem.afterUrl} 
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
                         alt="After treatment"
                         className="absolute inset-0 w-full h-full object-cover"
                         style={{ width: '100%', height: '100%' }} // prevent clip warping

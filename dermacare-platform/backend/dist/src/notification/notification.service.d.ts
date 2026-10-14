@@ -18,15 +18,23 @@ export declare class NotificationService implements OnModuleInit, OnModuleDestro
     sendWhatsApp(patientId: string, phone: string, type: string, message: string, attachmentPath?: string | null, clinicId?: string | null): Promise<{
         error: string | null;
         id: string;
+<<<<<<< HEAD
         phone: string;
         createdAt: Date;
         patientId: string;
         status: string;
+=======
+        createdAt: Date;
+        phone: string;
+        status: string;
+        patientId: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
         type: string;
         message: string;
         sentAt: Date | null;
     }>;
     createFollowUp(dto: any): Promise<{
+<<<<<<< HEAD
         patient: {
             id: string;
             patientCustomId: string | null;
@@ -53,10 +61,18 @@ export declare class NotificationService implements OnModuleInit, OnModuleDestro
         doctor: {
             id: string;
             fullName: string;
+=======
+        doctor: {
+            id: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
             createdAt: Date;
             updatedAt: Date;
             createdBy: string | null;
             deletedAt: Date | null;
+<<<<<<< HEAD
+=======
+            fullName: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
             mciNumber: string;
             specializations: string;
             qualifications: string;
@@ -65,18 +81,53 @@ export declare class NotificationService implements OnModuleInit, OnModuleDestro
             approvalStatus: string;
             userId: string;
         };
+<<<<<<< HEAD
+=======
+        patient: {
+            id: string;
+            createdAt: Date;
+            updatedAt: Date;
+            createdBy: string | null;
+            deletedAt: Date | null;
+            email: string | null;
+            phone: string;
+            fullName: string;
+            address: string | null;
+            clinicId: string | null;
+            patientCustomId: string | null;
+            aadhaarEncrypted: string | null;
+            aadhaarMasked: string | null;
+            aadhaarHash: string | null;
+            dateOfBirth: string | null;
+            gender: string | null;
+            bloodGroup: string | null;
+            allergies: string;
+            medicalConditions: string;
+            emergencyContact: string | null;
+            treatmentStatus: string;
+        };
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
     } & {
         id: string;
         createdAt: Date;
         updatedAt: Date;
         createdBy: string | null;
         deletedAt: Date | null;
+<<<<<<< HEAD
         clinicId: string;
         patientId: string;
         doctorId: string;
         reason: string | null;
         notes: string | null;
         status: string;
+=======
+        doctorId: string;
+        clinicId: string;
+        reason: string | null;
+        notes: string | null;
+        status: string;
+        patientId: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
         appointmentId: string | null;
         priority: string;
         dueDate: string;
@@ -89,12 +140,21 @@ export declare class NotificationService implements OnModuleInit, OnModuleDestro
         updatedAt: Date;
         createdBy: string | null;
         deletedAt: Date | null;
+<<<<<<< HEAD
         clinicId: string;
         patientId: string;
         doctorId: string;
         reason: string | null;
         notes: string | null;
         status: string;
+=======
+        doctorId: string;
+        clinicId: string;
+        reason: string | null;
+        notes: string | null;
+        status: string;
+        patientId: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
         appointmentId: string | null;
         priority: string;
         dueDate: string;
@@ -104,6 +164,7 @@ export declare class NotificationService implements OnModuleInit, OnModuleDestro
     getAllFollowUps(): Promise<({
         patient: {
             id: string;
+<<<<<<< HEAD
             patientCustomId: string | null;
             aadhaarEncrypted: string | null;
             aadhaarMasked: string | null;
@@ -119,11 +180,32 @@ export declare class NotificationService implements OnModuleInit, OnModuleDestro
             medicalConditions: string;
             emergencyContact: string | null;
             treatmentStatus: string;
+=======
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
             createdAt: Date;
             updatedAt: Date;
             createdBy: string | null;
             deletedAt: Date | null;
+<<<<<<< HEAD
             clinicId: string | null;
+=======
+            email: string | null;
+            phone: string;
+            fullName: string;
+            address: string | null;
+            clinicId: string | null;
+            patientCustomId: string | null;
+            aadhaarEncrypted: string | null;
+            aadhaarMasked: string | null;
+            aadhaarHash: string | null;
+            dateOfBirth: string | null;
+            gender: string | null;
+            bloodGroup: string | null;
+            allergies: string;
+            medicalConditions: string;
+            emergencyContact: string | null;
+            treatmentStatus: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
         };
     } & {
         id: string;
@@ -131,12 +213,21 @@ export declare class NotificationService implements OnModuleInit, OnModuleDestro
         updatedAt: Date;
         createdBy: string | null;
         deletedAt: Date | null;
+<<<<<<< HEAD
         clinicId: string;
         patientId: string;
         doctorId: string;
         reason: string | null;
         notes: string | null;
         status: string;
+=======
+        doctorId: string;
+        clinicId: string;
+        reason: string | null;
+        notes: string | null;
+        status: string;
+        patientId: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
         appointmentId: string | null;
         priority: string;
         dueDate: string;
@@ -150,10 +241,17 @@ export declare class NotificationService implements OnModuleInit, OnModuleDestro
     } & {
         error: string | null;
         id: string;
+<<<<<<< HEAD
         phone: string;
         createdAt: Date;
         patientId: string;
         status: string;
+=======
+        createdAt: Date;
+        phone: string;
+        status: string;
+        patientId: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
         type: string;
         message: string;
         sentAt: Date | null;
@@ -161,10 +259,17 @@ export declare class NotificationService implements OnModuleInit, OnModuleDestro
     resendNotification(id: string): Promise<{
         error: string | null;
         id: string;
+<<<<<<< HEAD
         phone: string;
         createdAt: Date;
         patientId: string;
         status: string;
+=======
+        createdAt: Date;
+        phone: string;
+        status: string;
+        patientId: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
         type: string;
         message: string;
         sentAt: Date | null;
@@ -172,10 +277,17 @@ export declare class NotificationService implements OnModuleInit, OnModuleDestro
     sendManualWhatsApp(patientId: string, message: string, clinicId?: string | null): Promise<{
         error: string | null;
         id: string;
+<<<<<<< HEAD
         phone: string;
         createdAt: Date;
         patientId: string;
         status: string;
+=======
+        createdAt: Date;
+        phone: string;
+        status: string;
+        patientId: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
         type: string;
         message: string;
         sentAt: Date | null;

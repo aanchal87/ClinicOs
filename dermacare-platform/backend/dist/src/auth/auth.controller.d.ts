@@ -30,12 +30,20 @@ export declare class AuthController {
                 experienceYears: number;
                 clinics: {
                     id: string;
+<<<<<<< HEAD
                     address: string;
+=======
+                    name: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
                     createdAt: Date;
                     updatedAt: Date;
                     createdBy: string | null;
                     deletedAt: Date | null;
+<<<<<<< HEAD
                     name: string;
+=======
+                    address: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
                     city: string;
                     state: string;
                     pincode: string;

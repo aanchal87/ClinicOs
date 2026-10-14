@@ -15,11 +15,19 @@ export declare class QueueService {
         updatedAt: Date;
         createdBy: string | null;
         deletedAt: Date | null;
+<<<<<<< HEAD
         clinicId: string | null;
         patientId: string;
         startTime: string | null;
         endTime: string | null;
         status: string;
+=======
+        startTime: string | null;
+        endTime: string | null;
+        clinicId: string | null;
+        status: string;
+        patientId: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
         tokenNumber: string;
         patientName: string;
         priority: string;
@@ -33,11 +41,19 @@ export declare class QueueService {
         updatedAt: Date;
         createdBy: string | null;
         deletedAt: Date | null;
+<<<<<<< HEAD
         clinicId: string | null;
         patientId: string;
         startTime: string | null;
         endTime: string | null;
         status: string;
+=======
+        startTime: string | null;
+        endTime: string | null;
+        clinicId: string | null;
+        status: string;
+        patientId: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
         tokenNumber: string;
         patientName: string;
         priority: string;
@@ -51,11 +67,19 @@ export declare class QueueService {
         updatedAt: Date;
         createdBy: string | null;
         deletedAt: Date | null;
+<<<<<<< HEAD
         clinicId: string | null;
         patientId: string;
         startTime: string | null;
         endTime: string | null;
         status: string;
+=======
+        startTime: string | null;
+        endTime: string | null;
+        clinicId: string | null;
+        status: string;
+        patientId: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
         tokenNumber: string;
         patientName: string;
         priority: string;

@@ -482,15 +482,20 @@ export function useGallery(patientId?: string) {
     queryFn: async () => {
       if (!patientId) return [];
       const response = await apiClient.get<any>(`/patients/${patientId}/history`);
+<<<<<<< HEAD
       const history = response?.data;
       const photos = history?.treatmentImages ?? history?.clinicalPhotos ?? [];
       const patientName = history?.patient?.fullName ?? history?.patient?.name ?? 'Patient';
+=======
+      const photos = response?.data?.clinicalPhotos ?? [];
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
       
       const galleryItems: TreatmentGalleryItem[] = [];
       const befores = photos.filter((p: any) => p.photoType === 'BEFORE');
       const afters = photos.filter((p: any) => p.photoType === 'AFTER');
       
       afters.forEach((after: any) => {
+<<<<<<< HEAD
         const before = befores.find((b: any) =>
           String(b.bodyArea || '').trim().toLowerCase() === String(after.bodyArea || '').trim().toLowerCase()
         ) || after;
@@ -498,6 +503,13 @@ export function useGallery(patientId?: string) {
           id: after.id,
           patientId: after.patientId,
           patientName,
+=======
+        const before = befores.find((b: any) => b.bodyArea === after.bodyArea || b.medicalRecordId === after.medicalRecordId) || after;
+        galleryItems.push({
+          id: after.id,
+          patientId: after.patientId,
+          patientName: response?.data?.name ?? 'Patient',
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
           title: `${after.bodyArea || 'Skin'} Treatment Comparison`,
           date: after.takenAt ? after.takenAt.split('T')[0] : new Date().toISOString().split('T')[0],
           beforeUrl: before.photoUrl,
@@ -511,7 +523,11 @@ export function useGallery(patientId?: string) {
           galleryItems.push({
             id: p.id,
             patientId: p.patientId,
+<<<<<<< HEAD
             patientName,
+=======
+            patientName: response?.data?.name ?? 'Patient',
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
             title: `${p.bodyArea || 'Clinical'} Photo`,
             date: p.takenAt ? p.takenAt.split('T')[0] : new Date().toISOString().split('T')[0],
             beforeUrl: p.photoUrl,
@@ -529,6 +545,7 @@ export function useGallery(patientId?: string) {
   });
 }
 
+<<<<<<< HEAD
 export function useUploadClinicalPhoto() {
   const queryClient = useQueryClient();
   return useMutation({
@@ -588,6 +605,29 @@ export function useAddGalleryItem() {
         photoType: 'AFTER',
         notes: newItem.notes,
       });
+=======
+export function useAddGalleryItem() {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: async (newItem: any) => {
+      if (newItem.beforeUrl) {
+        await apiClient.post(`/patients/${newItem.patientId}/photos`, {
+          photoUrl: newItem.beforeUrl,
+          bodyArea: newItem.title.replace(' Treatment Comparison', ''),
+          photoType: 'BEFORE',
+          notes: newItem.notes
+        });
+      }
+      
+      const response = await apiClient.post(`/patients/${newItem.patientId}/photos`, {
+        photoUrl: newItem.afterUrl,
+        bodyArea: newItem.title.replace(' Treatment Comparison', ''),
+        photoType: 'AFTER',
+        notes: newItem.notes
+      });
+      
+      return response.data;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['gallery'] });

@@ -12,11 +12,19 @@ export declare class PatientHistoryService {
                 updatedAt: Date;
                 createdBy: string | null;
                 deletedAt: Date | null;
+<<<<<<< HEAD
                 clinicId: string;
                 patientId: string;
                 doctorId: string;
                 notes: string | null;
                 status: string;
+=======
+                doctorId: string;
+                clinicId: string;
+                notes: string | null;
+                status: string;
+                patientId: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
                 date: string;
                 time: string;
                 type: string;
@@ -27,11 +35,19 @@ export declare class PatientHistoryService {
                 updatedAt: Date;
                 createdBy: string | null;
                 deletedAt: Date | null;
+<<<<<<< HEAD
                 clinicId: string | null;
                 patientId: string;
                 startTime: string | null;
                 endTime: string | null;
                 status: string;
+=======
+                startTime: string | null;
+                endTime: string | null;
+                clinicId: string | null;
+                status: string;
+                patientId: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
                 tokenNumber: string;
                 patientName: string;
                 priority: string;
@@ -46,11 +62,18 @@ export declare class PatientHistoryService {
             createdBy: string | null;
             deletedAt: Date | null;
             clinicId: string | null;
+<<<<<<< HEAD
             patientId: string;
+=======
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
             reason: string | null;
             notes: string | null;
             status: string;
             closedAt: Date | null;
+<<<<<<< HEAD
+=======
+            patientId: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
             appointmentId: string | null;
             tokenId: string | null;
         })[];
@@ -62,8 +85,13 @@ export declare class PatientHistoryService {
                 createdBy: string | null;
                 deletedAt: Date | null;
                 clinicId: string | null;
+<<<<<<< HEAD
                 patientId: string | null;
                 status: string;
+=======
+                status: string;
+                patientId: string | null;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
                 medicalRecordId: string | null;
                 testName: string;
                 testDate: string;
@@ -79,11 +107,19 @@ export declare class PatientHistoryService {
                 updatedAt: Date;
                 createdBy: string | null;
                 deletedAt: Date | null;
+<<<<<<< HEAD
                 clinicId: string;
                 patientId: string;
                 doctorId: string;
                 notes: string | null;
                 status: string;
+=======
+                doctorId: string;
+                clinicId: string;
+                notes: string | null;
+                status: string;
+                patientId: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
                 date: string;
                 time: string;
                 type: string;
@@ -95,8 +131,13 @@ export declare class PatientHistoryService {
                 createdBy: string | null;
                 deletedAt: Date | null;
                 clinicId: string;
+<<<<<<< HEAD
                 patientId: string;
                 notes: string | null;
+=======
+                notes: string | null;
+                patientId: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
                 bodyArea: string | null;
                 medicalRecordId: string | null;
                 takenAt: Date;
@@ -127,9 +168,15 @@ export declare class PatientHistoryService {
                 updatedAt: Date;
                 createdBy: string | null;
                 deletedAt: Date | null;
+<<<<<<< HEAD
                 clinicId: string;
                 patientId: string;
                 doctorId: string;
+=======
+                doctorId: string;
+                clinicId: string;
+                patientId: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
                 advice: string | null;
                 medicalRecordId: string | null;
             }) | null;
@@ -139,9 +186,15 @@ export declare class PatientHistoryService {
             updatedAt: Date;
             createdBy: string | null;
             deletedAt: Date | null;
+<<<<<<< HEAD
             clinicId: string;
             patientId: string;
             doctorId: string;
+=======
+            doctorId: string;
+            clinicId: string;
+            patientId: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
             appointmentId: string | null;
             chiefComplaint: string;
             historyOfPresent: string | null;
@@ -176,9 +229,15 @@ export declare class PatientHistoryService {
             updatedAt: Date;
             createdBy: string | null;
             deletedAt: Date | null;
+<<<<<<< HEAD
             clinicId: string;
             patientId: string;
             doctorId: string;
+=======
+            doctorId: string;
+            clinicId: string;
+            patientId: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
             advice: string | null;
             medicalRecordId: string | null;
         })[];
@@ -189,8 +248,13 @@ export declare class PatientHistoryService {
             createdBy: string | null;
             deletedAt: Date | null;
             clinicId: string | null;
+<<<<<<< HEAD
             patientId: string | null;
             status: string;
+=======
+            status: string;
+            patientId: string | null;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
             medicalRecordId: string | null;
             testName: string;
             testDate: string;
@@ -206,12 +270,21 @@ export declare class PatientHistoryService {
             updatedAt: Date;
             createdBy: string | null;
             deletedAt: Date | null;
+<<<<<<< HEAD
             clinicId: string;
             patientId: string;
             doctorId: string;
             reason: string | null;
             notes: string | null;
             status: string;
+=======
+            doctorId: string;
+            clinicId: string;
+            reason: string | null;
+            notes: string | null;
+            status: string;
+            patientId: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
             appointmentId: string | null;
             priority: string;
             dueDate: string;
@@ -241,8 +314,13 @@ export declare class PatientHistoryService {
             createdBy: string | null;
             deletedAt: Date | null;
             clinicId: string;
+<<<<<<< HEAD
             patientId: string;
             notes: string | null;
+=======
+            notes: string | null;
+            patientId: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
             bodyArea: string | null;
             medicalRecordId: string | null;
             takenAt: Date;
@@ -256,11 +334,19 @@ export declare class PatientHistoryService {
             updatedAt: Date;
             createdBy: string | null;
             deletedAt: Date | null;
+<<<<<<< HEAD
             clinicId: string | null;
             patientId: string;
             startTime: string | null;
             endTime: string | null;
             status: string;
+=======
+            startTime: string | null;
+            endTime: string | null;
+            clinicId: string | null;
+            status: string;
+            patientId: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
             tokenNumber: string;
             patientName: string;
             priority: string;

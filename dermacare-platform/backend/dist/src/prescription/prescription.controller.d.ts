@@ -3,6 +3,7 @@ export declare class PrescriptionController {
     private prescriptionService;
     constructor(prescriptionService: PrescriptionService);
     create(dto: any, req: any): Promise<({
+<<<<<<< HEAD
         patient: {
             id: string;
             patientCustomId: string | null;
@@ -44,10 +45,18 @@ export declare class PrescriptionController {
         doctor: {
             id: string;
             fullName: string;
+=======
+        doctor: {
+            id: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
             createdAt: Date;
             updatedAt: Date;
             createdBy: string | null;
             deletedAt: Date | null;
+<<<<<<< HEAD
+=======
+            fullName: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
             mciNumber: string;
             specializations: string;
             qualifications: string;
@@ -56,6 +65,47 @@ export declare class PrescriptionController {
             approvalStatus: string;
             userId: string;
         };
+<<<<<<< HEAD
+=======
+        clinic: {
+            id: string;
+            name: string;
+            createdAt: Date;
+            updatedAt: Date;
+            createdBy: string | null;
+            deletedAt: Date | null;
+            address: string;
+            city: string;
+            state: string;
+            pincode: string;
+            contactNumber: string | null;
+            workingHours: string;
+            doctorId: string;
+        };
+        patient: {
+            id: string;
+            createdAt: Date;
+            updatedAt: Date;
+            createdBy: string | null;
+            deletedAt: Date | null;
+            email: string | null;
+            phone: string;
+            fullName: string;
+            address: string | null;
+            clinicId: string | null;
+            patientCustomId: string | null;
+            aadhaarEncrypted: string | null;
+            aadhaarMasked: string | null;
+            aadhaarHash: string | null;
+            dateOfBirth: string | null;
+            gender: string | null;
+            bloodGroup: string | null;
+            allergies: string;
+            medicalConditions: string;
+            emergencyContact: string | null;
+            treatmentStatus: string;
+        };
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
         items: {
             id: string;
             createdAt: Date;
@@ -78,13 +128,20 @@ export declare class PrescriptionController {
         updatedAt: Date;
         createdBy: string | null;
         deletedAt: Date | null;
+<<<<<<< HEAD
         clinicId: string;
         patientId: string;
         doctorId: string;
+=======
+        doctorId: string;
+        clinicId: string;
+        patientId: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
         advice: string | null;
         medicalRecordId: string | null;
     }) | null>;
     getPatientPrescriptions(patientId: string, req: any): Promise<({
+<<<<<<< HEAD
         clinic: {
             id: string;
             address: string;
@@ -103,10 +160,18 @@ export declare class PrescriptionController {
         doctor: {
             id: string;
             fullName: string;
+=======
+        doctor: {
+            id: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
             createdAt: Date;
             updatedAt: Date;
             createdBy: string | null;
             deletedAt: Date | null;
+<<<<<<< HEAD
+=======
+            fullName: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
             mciNumber: string;
             specializations: string;
             qualifications: string;
@@ -115,6 +180,24 @@ export declare class PrescriptionController {
             approvalStatus: string;
             userId: string;
         };
+<<<<<<< HEAD
+=======
+        clinic: {
+            id: string;
+            name: string;
+            createdAt: Date;
+            updatedAt: Date;
+            createdBy: string | null;
+            deletedAt: Date | null;
+            address: string;
+            city: string;
+            state: string;
+            pincode: string;
+            contactNumber: string | null;
+            workingHours: string;
+            doctorId: string;
+        };
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
         items: {
             id: string;
             createdAt: Date;
@@ -137,13 +220,20 @@ export declare class PrescriptionController {
         updatedAt: Date;
         createdBy: string | null;
         deletedAt: Date | null;
+<<<<<<< HEAD
         clinicId: string;
         patientId: string;
         doctorId: string;
+=======
+        doctorId: string;
+        clinicId: string;
+        patientId: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
         advice: string | null;
         medicalRecordId: string | null;
     })[]>;
     getPrescriptionDetails(id: string, req: any): Promise<{
+<<<<<<< HEAD
         patient: {
             id: string;
             patientCustomId: string | null;
@@ -185,10 +275,18 @@ export declare class PrescriptionController {
         doctor: {
             id: string;
             fullName: string;
+=======
+        doctor: {
+            id: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
             createdAt: Date;
             updatedAt: Date;
             createdBy: string | null;
             deletedAt: Date | null;
+<<<<<<< HEAD
+=======
+            fullName: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
             mciNumber: string;
             specializations: string;
             qualifications: string;
@@ -197,15 +295,62 @@ export declare class PrescriptionController {
             approvalStatus: string;
             userId: string;
         };
+<<<<<<< HEAD
+=======
+        clinic: {
+            id: string;
+            name: string;
+            createdAt: Date;
+            updatedAt: Date;
+            createdBy: string | null;
+            deletedAt: Date | null;
+            address: string;
+            city: string;
+            state: string;
+            pincode: string;
+            contactNumber: string | null;
+            workingHours: string;
+            doctorId: string;
+        };
+        patient: {
+            id: string;
+            createdAt: Date;
+            updatedAt: Date;
+            createdBy: string | null;
+            deletedAt: Date | null;
+            email: string | null;
+            phone: string;
+            fullName: string;
+            address: string | null;
+            clinicId: string | null;
+            patientCustomId: string | null;
+            aadhaarEncrypted: string | null;
+            aadhaarMasked: string | null;
+            aadhaarHash: string | null;
+            dateOfBirth: string | null;
+            gender: string | null;
+            bloodGroup: string | null;
+            allergies: string;
+            medicalConditions: string;
+            emergencyContact: string | null;
+            treatmentStatus: string;
+        };
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
         medicalRecord: {
             id: string;
             createdAt: Date;
             updatedAt: Date;
             createdBy: string | null;
             deletedAt: Date | null;
+<<<<<<< HEAD
             clinicId: string;
             patientId: string;
             doctorId: string;
+=======
+            doctorId: string;
+            clinicId: string;
+            patientId: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
             appointmentId: string | null;
             chiefComplaint: string;
             historyOfPresent: string | null;
@@ -239,9 +384,15 @@ export declare class PrescriptionController {
         updatedAt: Date;
         createdBy: string | null;
         deletedAt: Date | null;
+<<<<<<< HEAD
         clinicId: string;
         patientId: string;
         doctorId: string;
+=======
+        doctorId: string;
+        clinicId: string;
+        patientId: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
         advice: string | null;
         medicalRecordId: string | null;
     }>;

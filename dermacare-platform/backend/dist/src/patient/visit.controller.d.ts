@@ -9,6 +9,7 @@ export declare class VisitController {
         createdBy: string | null;
         deletedAt: Date | null;
         clinicId: string | null;
+<<<<<<< HEAD
         patientId: string;
         status: string;
         notes: string | null;
@@ -16,5 +17,14 @@ export declare class VisitController {
         reason: string | null;
         tokenId: string | null;
         closedAt: Date | null;
+=======
+        reason: string | null;
+        notes: string | null;
+        status: string;
+        closedAt: Date | null;
+        patientId: string;
+        appointmentId: string | null;
+        tokenId: string | null;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
     }>;
 }

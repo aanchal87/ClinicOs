@@ -11,6 +11,7 @@
   --color-clinic-warning: var(--clr-warning);
   --color-clinic-danger: var(--clr-danger);
 
+<<<<<<< HEAD
   --radius-clinic-6: 7px;
   --radius-clinic-10: 11px;
   --radius-clinic-14: 16px;
@@ -48,11 +49,45 @@
 
 html {
   scroll-behavior: smooth;
+=======
+  --radius-clinic-6: 6px;
+  --radius-clinic-10: 10px;
+  --radius-clinic-14: 14px;
+  --radius-clinic-18: 18px;
+  --radius-clinic-24: 24px;
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+:root {
+  --clr-bg: #FAFAFA;
+  --clr-surface: #FFFFFF;
+  --clr-text-primary: #111827;
+  --clr-text-secondary: #6B7280;
+  --clr-border: #E5E7EB;
+  --clr-accent: #2563EB;
+  --clr-success: #16A34A;
+  --clr-warning: #F59E0B;
+  --clr-danger: #DC2626;
+}
+
+.dark {
+  --clr-bg: #0A0A0A;
+  --clr-surface: #121212;
+  --clr-text-primary: #F9FAFB;
+  --clr-text-secondary: #9CA3AF;
+  --clr-border: #262626;
+  --clr-accent: #3B82F6;
+  --clr-success: #22C55E;
+  --clr-warning: #F59E0B;
+  --clr-danger: #EF4444;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
 }
 
 body {
   background-color: var(--clr-bg);
   color: var(--clr-text-primary);
+<<<<<<< HEAD
   font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   letter-spacing: -0.01em;
@@ -68,6 +103,10 @@ body {
 :focus-visible {
   outline: 2px solid var(--clr-accent);
   outline-offset: 2px;
+=======
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  min-height: 100vh;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
 }
 
 /* Smooth transitions for theme switching */
@@ -79,8 +118,13 @@ body {
 
 /* Custom Scrollbars */
 ::-webkit-scrollbar {
+<<<<<<< HEAD
   width: 8px;
   height: 8px;
+=======
+  width: 6px;
+  height: 6px;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
 }
 
 ::-webkit-scrollbar-track {

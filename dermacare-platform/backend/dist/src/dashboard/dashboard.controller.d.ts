@@ -19,11 +19,19 @@ export declare class DashboardController {
             updatedAt: Date;
             createdBy: string | null;
             deletedAt: Date | null;
+<<<<<<< HEAD
             clinicId: string | null;
             patientId: string;
             startTime: string | null;
             endTime: string | null;
             status: string;
+=======
+            startTime: string | null;
+            endTime: string | null;
+            clinicId: string | null;
+            status: string;
+            patientId: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
             tokenNumber: string;
             patientName: string;
             priority: string;
@@ -37,11 +45,19 @@ export declare class DashboardController {
             updatedAt: Date;
             createdBy: string | null;
             deletedAt: Date | null;
+<<<<<<< HEAD
             clinicId: string | null;
             patientId: string;
             startTime: string | null;
             endTime: string | null;
             status: string;
+=======
+            startTime: string | null;
+            endTime: string | null;
+            clinicId: string | null;
+            status: string;
+            patientId: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
             tokenNumber: string;
             patientName: string;
             priority: string;
@@ -52,8 +68,13 @@ export declare class DashboardController {
     }>;
     getDoctorRecentActivity(req: any): Promise<({
         user: {
+<<<<<<< HEAD
             email: string;
             role: string;
+=======
+            role: string;
+            email: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
         } | null;
     } & {
         id: string;
@@ -77,6 +98,7 @@ export declare class DashboardController {
         appointments: ({
             patient: {
                 id: string;
+<<<<<<< HEAD
                 patientCustomId: string | null;
                 aadhaarEncrypted: string | null;
                 aadhaarMasked: string | null;
@@ -92,11 +114,32 @@ export declare class DashboardController {
                 medicalConditions: string;
                 emergencyContact: string | null;
                 treatmentStatus: string;
+=======
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
                 createdAt: Date;
                 updatedAt: Date;
                 createdBy: string | null;
                 deletedAt: Date | null;
+<<<<<<< HEAD
                 clinicId: string | null;
+=======
+                email: string | null;
+                phone: string;
+                fullName: string;
+                address: string | null;
+                clinicId: string | null;
+                patientCustomId: string | null;
+                aadhaarEncrypted: string | null;
+                aadhaarMasked: string | null;
+                aadhaarHash: string | null;
+                dateOfBirth: string | null;
+                gender: string | null;
+                bloodGroup: string | null;
+                allergies: string;
+                medicalConditions: string;
+                emergencyContact: string | null;
+                treatmentStatus: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
             };
         } & {
             id: string;
@@ -104,11 +147,19 @@ export declare class DashboardController {
             updatedAt: Date;
             createdBy: string | null;
             deletedAt: Date | null;
+<<<<<<< HEAD
             clinicId: string;
             patientId: string;
             doctorId: string;
             notes: string | null;
             status: string;
+=======
+            doctorId: string;
+            clinicId: string;
+            notes: string | null;
+            status: string;
+            patientId: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
             date: string;
             time: string;
             type: string;
@@ -119,11 +170,19 @@ export declare class DashboardController {
             updatedAt: Date;
             createdBy: string | null;
             deletedAt: Date | null;
+<<<<<<< HEAD
             clinicId: string | null;
             patientId: string;
             startTime: string | null;
             endTime: string | null;
             status: string;
+=======
+            startTime: string | null;
+            endTime: string | null;
+            clinicId: string | null;
+            status: string;
+            patientId: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
             tokenNumber: string;
             patientName: string;
             priority: string;
@@ -137,11 +196,19 @@ export declare class DashboardController {
             updatedAt: Date;
             createdBy: string | null;
             deletedAt: Date | null;
+<<<<<<< HEAD
             clinicId: string | null;
             patientId: string;
             startTime: string | null;
             endTime: string | null;
             status: string;
+=======
+            startTime: string | null;
+            endTime: string | null;
+            clinicId: string | null;
+            status: string;
+            patientId: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
             tokenNumber: string;
             patientName: string;
             priority: string;
@@ -151,8 +218,13 @@ export declare class DashboardController {
         }[];
         recentActivity: ({
             user: {
+<<<<<<< HEAD
                 email: string;
                 role: string;
+=======
+                role: string;
+                email: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
             } | null;
         } & {
             id: string;
@@ -187,6 +259,7 @@ export declare class DashboardController {
         appointments: ({
             patient: {
                 id: string;
+<<<<<<< HEAD
                 patientCustomId: string | null;
                 aadhaarEncrypted: string | null;
                 aadhaarMasked: string | null;
@@ -202,11 +275,32 @@ export declare class DashboardController {
                 medicalConditions: string;
                 emergencyContact: string | null;
                 treatmentStatus: string;
+=======
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
                 createdAt: Date;
                 updatedAt: Date;
                 createdBy: string | null;
                 deletedAt: Date | null;
+<<<<<<< HEAD
                 clinicId: string | null;
+=======
+                email: string | null;
+                phone: string;
+                fullName: string;
+                address: string | null;
+                clinicId: string | null;
+                patientCustomId: string | null;
+                aadhaarEncrypted: string | null;
+                aadhaarMasked: string | null;
+                aadhaarHash: string | null;
+                dateOfBirth: string | null;
+                gender: string | null;
+                bloodGroup: string | null;
+                allergies: string;
+                medicalConditions: string;
+                emergencyContact: string | null;
+                treatmentStatus: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
             };
         } & {
             id: string;
@@ -214,11 +308,19 @@ export declare class DashboardController {
             updatedAt: Date;
             createdBy: string | null;
             deletedAt: Date | null;
+<<<<<<< HEAD
             clinicId: string;
             patientId: string;
             doctorId: string;
             notes: string | null;
             status: string;
+=======
+            doctorId: string;
+            clinicId: string;
+            notes: string | null;
+            status: string;
+            patientId: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
             date: string;
             time: string;
             type: string;
@@ -229,11 +331,19 @@ export declare class DashboardController {
             updatedAt: Date;
             createdBy: string | null;
             deletedAt: Date | null;
+<<<<<<< HEAD
             clinicId: string | null;
             patientId: string;
             startTime: string | null;
             endTime: string | null;
             status: string;
+=======
+            startTime: string | null;
+            endTime: string | null;
+            clinicId: string | null;
+            status: string;
+            patientId: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
             tokenNumber: string;
             patientName: string;
             priority: string;
@@ -256,8 +366,13 @@ export declare class DashboardController {
     }>;
     getSuperAdminAuditLogs(req: any): Promise<({
         user: {
+<<<<<<< HEAD
             email: string;
             role: string;
+=======
+            role: string;
+            email: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
         } | null;
     } & {
         id: string;
@@ -271,19 +386,33 @@ export declare class DashboardController {
     })[]>;
     getSuperAdminUsers(req: any): Promise<{
         id: string;
+<<<<<<< HEAD
         email: string;
         createdAt: Date;
         role: string;
+=======
+        createdAt: Date;
+        role: string;
+        email: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
         isActive: boolean;
     }[]>;
     getSuperAdminClinics(req: any): Promise<{
         id: string;
+<<<<<<< HEAD
         address: string;
+=======
+        name: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
         createdAt: Date;
         updatedAt: Date;
         createdBy: string | null;
         deletedAt: Date | null;
+<<<<<<< HEAD
         name: string;
+=======
+        address: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
         city: string;
         state: string;
         pincode: string;
@@ -306,8 +435,13 @@ export declare class DashboardController {
         };
         auditLogs: ({
             user: {
+<<<<<<< HEAD
                 email: string;
                 role: string;
+=======
+                role: string;
+                email: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
             } | null;
         } & {
             id: string;
@@ -321,19 +455,33 @@ export declare class DashboardController {
         })[];
         users: {
             id: string;
+<<<<<<< HEAD
             email: string;
             createdAt: Date;
             role: string;
+=======
+            createdAt: Date;
+            role: string;
+            email: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
             isActive: boolean;
         }[];
         clinics: {
             id: string;
+<<<<<<< HEAD
             address: string;
+=======
+            name: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
             createdAt: Date;
             updatedAt: Date;
             createdBy: string | null;
             deletedAt: Date | null;
+<<<<<<< HEAD
             name: string;
+=======
+            address: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
             city: string;
             state: string;
             pincode: string;

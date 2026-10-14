@@ -1,9 +1,16 @@
+<<<<<<< HEAD
 import { Injectable, NotFoundException, ConflictException, BadRequestException, Logger, Inject } from '@nestjs/common';
 import { PrismaService } from '../prisma.service';
 import { CryptoService } from '../auth/crypto.service';
 import { AuditLogService } from '../common/audit-log/audit-log.service';
 import { StorageProviderToken } from '../common/storage/storage.provider.factory';
 import { randomUUID } from 'crypto';
+=======
+import { Injectable, NotFoundException, ConflictException, BadRequestException, Logger } from '@nestjs/common';
+import { PrismaService } from '../prisma.service';
+import { CryptoService } from '../auth/crypto.service';
+import { AuditLogService } from '../common/audit-log/audit-log.service';
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
 
 import { NotificationService } from '../notification/notification.service';
 
@@ -14,8 +21,12 @@ export class PatientService {
     private prisma: PrismaService,
     private cryptoService: CryptoService,
     private auditLogService: AuditLogService,
+<<<<<<< HEAD
     private notificationService: NotificationService,
     @Inject(StorageProviderToken) private storageProvider: any,
+=======
+    private notificationService: NotificationService
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
   ) {}
 
   private mapPatient(patient: any) {
@@ -560,6 +571,7 @@ export class PatientService {
     return photo;
   }
 
+<<<<<<< HEAD
   async uploadClinicalPhotoFile(patientId: string, file: any, dto: any, clinicId?: string, userPayload?: any) {
     const patient = await this.prisma.patient.findUnique({ where: { id: patientId } });
     if (!patient || (clinicId && patient.clinicId !== clinicId)) {
@@ -618,6 +630,8 @@ export class PatientService {
     return photo;
   }
 
+=======
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
   async closeVisit(visitId: string) {
     const visit = await this.prisma.visit.findUnique({
       where: { id: visitId }

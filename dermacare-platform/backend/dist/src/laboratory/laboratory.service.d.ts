@@ -9,6 +9,7 @@ export declare class LaboratoryService {
         patientName: string;
         patient: {
             id: string;
+<<<<<<< HEAD
             patientCustomId: string | null;
             aadhaarEncrypted: string | null;
             aadhaarMasked: string | null;
@@ -24,11 +25,32 @@ export declare class LaboratoryService {
             medicalConditions: string;
             emergencyContact: string | null;
             treatmentStatus: string;
+=======
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
             createdAt: Date;
             updatedAt: Date;
             createdBy: string | null;
             deletedAt: Date | null;
+<<<<<<< HEAD
             clinicId: string | null;
+=======
+            email: string | null;
+            phone: string;
+            fullName: string;
+            address: string | null;
+            clinicId: string | null;
+            patientCustomId: string | null;
+            aadhaarEncrypted: string | null;
+            aadhaarMasked: string | null;
+            aadhaarHash: string | null;
+            dateOfBirth: string | null;
+            gender: string | null;
+            bloodGroup: string | null;
+            allergies: string;
+            medicalConditions: string;
+            emergencyContact: string | null;
+            treatmentStatus: string;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
         } | null;
         id: string;
         createdAt: Date;
@@ -36,8 +58,13 @@ export declare class LaboratoryService {
         createdBy: string | null;
         deletedAt: Date | null;
         clinicId: string | null;
+<<<<<<< HEAD
         patientId: string | null;
         status: string;
+=======
+        status: string;
+        patientId: string | null;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
         medicalRecordId: string | null;
         testName: string;
         testDate: string;
@@ -54,8 +81,13 @@ export declare class LaboratoryService {
         createdBy: string | null;
         deletedAt: Date | null;
         clinicId: string | null;
+<<<<<<< HEAD
         patientId: string | null;
         status: string;
+=======
+        status: string;
+        patientId: string | null;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
         medicalRecordId: string | null;
         testName: string;
         testDate: string;
@@ -80,8 +112,13 @@ export declare class LaboratoryService {
         createdBy: string | null;
         deletedAt: Date | null;
         clinicId: string | null;
+<<<<<<< HEAD
         patientId: string | null;
         status: string;
+=======
+        status: string;
+        patientId: string | null;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
         medicalRecordId: string | null;
         testName: string;
         testDate: string;
@@ -98,8 +135,13 @@ export declare class LaboratoryService {
         createdBy: string | null;
         deletedAt: Date | null;
         clinicId: string | null;
+<<<<<<< HEAD
         patientId: string | null;
         status: string;
+=======
+        status: string;
+        patientId: string | null;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
         medicalRecordId: string | null;
         testName: string;
         testDate: string;
@@ -116,8 +158,13 @@ export declare class LaboratoryService {
         createdBy: string | null;
         deletedAt: Date | null;
         clinicId: string | null;
+<<<<<<< HEAD
         patientId: string | null;
         status: string;
+=======
+        status: string;
+        patientId: string | null;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
         medicalRecordId: string | null;
         testName: string;
         testDate: string;
@@ -137,8 +184,13 @@ export declare class LaboratoryService {
         createdBy: string | null;
         deletedAt: Date | null;
         clinicId: string | null;
+<<<<<<< HEAD
         patientId: string | null;
         status: string;
+=======
+        status: string;
+        patientId: string | null;
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
         medicalRecordId: string | null;
         testName: string;
         testDate: string;

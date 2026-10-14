@@ -28,6 +28,10 @@ export declare class PatientController {
         createdBy: string | null;
         deletedAt: Date | null;
         clinicId: string;
+        doctorId: string;
+        patientId: string;
+        appointmentId: string | null;
+        visitId: string | null;
         chiefComplaint: string;
         historyOfPresent: string | null;
         examinationFindings: string | null;
@@ -36,10 +40,6 @@ export declare class PatientController {
         skinType: string | null;
         lesionType: string | null;
         bodyArea: string | null;
-        appointmentId: string | null;
-        visitId: string | null;
-        doctorId: string;
-        patientId: string;
     }>;
     addPhoto(id: string, dto: any, req: any): Promise<{
         id: string;
@@ -48,14 +48,14 @@ export declare class PatientController {
         createdBy: string | null;
         deletedAt: Date | null;
         clinicId: string;
-        bodyArea: string | null;
+        takenAt: Date;
         patientId: string;
+        notes: string | null;
+        bodyArea: string | null;
+        medicalRecordId: string | null;
         photoUrl: string;
         thumbnailUrl: string | null;
         photoType: string;
-        notes: string | null;
-        takenAt: Date;
-        medicalRecordId: string | null;
     }>;
     uploadPhotoFile(id: string, file: any, dto: any, req: any): Promise<{
         id: string;
@@ -64,13 +64,13 @@ export declare class PatientController {
         createdBy: string | null;
         deletedAt: Date | null;
         clinicId: string;
-        bodyArea: string | null;
+        takenAt: Date;
         patientId: string;
+        notes: string | null;
+        bodyArea: string | null;
+        medicalRecordId: string | null;
         photoUrl: string;
         thumbnailUrl: string | null;
         photoType: string;
-        notes: string | null;
-        takenAt: Date;
-        medicalRecordId: string | null;
     }>;
 }

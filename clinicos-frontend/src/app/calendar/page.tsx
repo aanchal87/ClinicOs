@@ -105,6 +105,7 @@ export default function CalendarPage() {
   };
 
   return (
+<<<<<<< HEAD
     <div className="flex flex-col gap-5 sm:gap-7">
       {/* Title + Views Switcher row */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
@@ -113,6 +114,15 @@ export default function CalendarPage() {
           <h1 className="text-2xl sm:text-[28px] font-semibold tracking-tight text-clinic-text-primary">Schedule</h1>
           <p className="text-sm text-clinic-text-secondary mt-1.5">
             Find a visit by day, week, or month.
+=======
+    <div className="flex flex-col gap-8">
+      {/* Title + Views Switcher row */}
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div>
+          <h1 className="text-2xl font-bold tracking-tight text-clinic-text-primary">Appointment Calendar</h1>
+          <p className="text-sm text-clinic-text-secondary mt-1">
+            Day, week, and month visual appointment slot tracking system.
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
           </p>
         </div>
 
@@ -135,16 +145,26 @@ export default function CalendarPage() {
       </div>
 
       {/* Date Navigator Banner */}
+<<<<<<< HEAD
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3 sm:p-4 bg-clinic-surface border border-clinic-border rounded-2xl shadow-sm">
         <div className="flex items-center justify-between gap-2 min-w-0">
+=======
+      <div className="flex items-center justify-between p-4 bg-clinic-surface border border-clinic-border rounded-clinic-14 shadow-sm">
+        <div className="flex items-center gap-3">
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
           <button 
             onClick={handlePrevDate}
             className="p-2 border border-clinic-border text-clinic-text-secondary hover:text-clinic-text-primary hover:bg-clinic-bg rounded-clinic-10 cursor-pointer"
           >
             <ChevronLeft className="h-4 w-4" />
           </button>
+<<<<<<< HEAD
           <span className="text-xs sm:text-sm font-bold text-clinic-text-primary text-center truncate">
             {new Date(selectedDate).toLocaleDateString([], { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' })}
+=======
+          <span className="text-sm font-bold text-clinic-text-primary">
+            {new Date(selectedDate).toLocaleDateString([], { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
           </span>
           <button 
             onClick={handleNextDate}
@@ -154,14 +174,22 @@ export default function CalendarPage() {
           </button>
         </div>
         
+<<<<<<< HEAD
         <div className="flex items-center gap-2 text-[11px] sm:text-xs text-clinic-text-secondary pl-1">
+=======
+        <div className="flex items-center gap-2 text-xs text-clinic-text-secondary">
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
           <CalendarIcon className="h-4 w-4" />
           <span>Clinic hours: 09:00 AM - 06:00 PM</span>
         </div>
       </div>
 
       {/* VIEW PANEL RENDERS */}
+<<<<<<< HEAD
       <div className="bg-clinic-surface border border-clinic-border rounded-2xl shadow-sm overflow-hidden p-3 sm:p-5 lg:p-6">
+=======
+      <div className="bg-clinic-surface border border-clinic-border rounded-clinic-14 shadow-sm overflow-hidden p-6">
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
         
         {/* DAY VIEW (The standard 12 slots core workflow) */}
         {activeView === 'day' && (
@@ -176,7 +204,11 @@ export default function CalendarPage() {
                 return (
                   <div 
                     key={slot.id}
+<<<<<<< HEAD
                     className={`flex flex-col lg:flex-row lg:items-center justify-between py-4 gap-3 lg:gap-4 ${
+=======
+                    className={`flex flex-col sm:flex-row sm:items-center justify-between py-4 gap-4 ${
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
                       isLunch ? 'bg-zinc-50/50 dark:bg-zinc-900/10' : ''
                     }`}
                   >
@@ -267,7 +299,11 @@ export default function CalendarPage() {
 
         {/* WEEK VIEW (MOCK MULTI-COLUMN WEEK GRID) */}
         {activeView === 'week' && (
+<<<<<<< HEAD
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-7 gap-3 text-center">
+=======
+          <div className="grid grid-cols-7 gap-4 text-center">
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
             {['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].map((day, idx) => {
               const count = idx === 0 ? 5 : idx === 3 ? 6 : idx === 5 ? 2 : idx === 6 ? 0 : 4;
               return (
@@ -290,17 +326,30 @@ export default function CalendarPage() {
 
         {/* MONTH VIEW (MOCK CALENDAR DAYS MATRIX) */}
         {activeView === 'month' && (
+<<<<<<< HEAD
             <div className="flex flex-col gap-3">
             <div className="grid grid-cols-7 gap-1 sm:gap-2 text-center text-[10px] sm:text-xs font-bold text-clinic-text-secondary uppercase">
               <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
             </div>
             <div className="grid grid-cols-7 gap-1 sm:gap-2 min-h-[16rem] sm:h-72">
+=======
+          <div className="flex flex-col gap-4">
+            <div className="grid grid-cols-7 gap-2 text-center text-xs font-bold text-clinic-text-secondary uppercase">
+              <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+            </div>
+            <div className="grid grid-cols-7 gap-2 h-72">
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
               {Array.from({ length: 31 }).map((_, i) => {
                 const dayNum = i + 1;
                 const hasVisits = dayNum % 4 === 0;
                 return (
+<<<<<<< HEAD
                   <div key={i} className="bg-clinic-bg border border-clinic-border/60 rounded-lg sm:rounded-xl p-1.5 sm:p-2 flex flex-col justify-between hover:bg-clinic-bg/85 cursor-pointer min-h-9">
                     <span className="text-[10px] sm:text-xs font-bold text-clinic-text-secondary">{dayNum}</span>
+=======
+                  <div key={i} className="bg-clinic-bg border border-clinic-border/60 rounded-clinic-10 p-2 flex flex-col justify-between hover:bg-clinic-bg/85 cursor-pointer">
+                    <span className="text-xs font-bold text-clinic-text-secondary">{dayNum}</span>
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
                     {hasVisits && (
                       <div className="h-1.5 w-1.5 rounded-full bg-clinic-accent mx-auto" />
                     )}

@@ -13,6 +13,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = 'primary', size = 'md', isLoading, children, disabled, ...props }, ref) => {
+<<<<<<< HEAD
     const baseStyles = 'inline-flex items-center justify-center gap-2 font-medium rounded-xl transition-[background-color,border-color,color,box-shadow,transform] duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clinic-accent focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none cursor-pointer active:translate-y-px';
     
     const variants = {
@@ -26,6 +27,21 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       sm: 'px-3 py-2 text-xs',
       md: 'px-4 py-2.5 text-sm',
       lg: 'px-5 py-3 text-base',
+=======
+    const baseStyles = 'inline-flex items-center justify-center font-medium rounded-clinic-10 transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-clinic-accent disabled:opacity-50 disabled:pointer-events-none cursor-pointer';
+    
+    const variants = {
+      primary: 'bg-clinic-accent text-white hover:bg-blue-700 shadow-sm border border-transparent',
+      secondary: 'bg-clinic-surface text-clinic-text-primary border border-clinic-border hover:bg-clinic-bg shadow-sm',
+      ghost: 'bg-transparent text-clinic-text-secondary hover:text-clinic-text-primary hover:bg-clinic-bg',
+      destructive: 'bg-clinic-danger text-white hover:bg-red-700 shadow-sm border border-transparent',
+    };
+
+    const sizes = {
+      sm: 'px-3 py-1.5 text-xs',
+      md: 'px-4 py-2 text-sm',
+      lg: 'px-5 py-2.5 text-base',
+>>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
     };
 
     const MotionButton = motion.button as any;

@@ -1,0 +1,183 @@
+import { OnModuleInit, OnModuleDestroy } from '@nestjs/common';
+import { PrismaService } from '../prisma.service';
+import { WhatsAppProvider } from './whatsapp.provider';
+export declare class NotificationService implements OnModuleInit, OnModuleDestroy {
+    private prisma;
+    private whatsappProvider;
+    private readonly logger;
+    private schedulerInterval;
+    private lastRunDate;
+    constructor(prisma: PrismaService, whatsappProvider: WhatsAppProvider);
+    onModuleInit(): void;
+    onModuleDestroy(): void;
+    private checkAndRunFollowUpCron;
+    triggerDailyFollowUps(dateStr: string): Promise<{
+        processed: number;
+        sent: number;
+    }>;
+    sendWhatsApp(patientId: string, phone: string, type: string, message: string, attachmentPath?: string | null, clinicId?: string | null): Promise<{
+        error: string | null;
+        id: string;
+        phone: string;
+        createdAt: Date;
+        patientId: string;
+        status: string;
+        type: string;
+        message: string;
+        sentAt: Date | null;
+    }>;
+    createFollowUp(dto: any): Promise<{
+        patient: {
+            id: string;
+            patientCustomId: string | null;
+            aadhaarEncrypted: string | null;
+            aadhaarMasked: string | null;
+            aadhaarHash: string | null;
+            fullName: string;
+            email: string | null;
+            phone: string;
+            dateOfBirth: string | null;
+            gender: string | null;
+            bloodGroup: string | null;
+            address: string | null;
+            allergies: string;
+            medicalConditions: string;
+            emergencyContact: string | null;
+            treatmentStatus: string;
+            createdAt: Date;
+            updatedAt: Date;
+            createdBy: string | null;
+            deletedAt: Date | null;
+            clinicId: string | null;
+        };
+        doctor: {
+            id: string;
+            fullName: string;
+            createdAt: Date;
+            updatedAt: Date;
+            createdBy: string | null;
+            deletedAt: Date | null;
+            mciNumber: string;
+            specializations: string;
+            qualifications: string;
+            experienceYears: number;
+            consultationFee: number;
+            approvalStatus: string;
+            userId: string;
+        };
+    } & {
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        createdBy: string | null;
+        deletedAt: Date | null;
+        clinicId: string;
+        patientId: string;
+        doctorId: string;
+        reason: string | null;
+        notes: string | null;
+        status: string;
+        appointmentId: string | null;
+        priority: string;
+        dueDate: string;
+        reminderCount: number;
+        lastRemindedAt: Date | null;
+    }>;
+    getPatientFollowUps(patientId: string): Promise<{
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        createdBy: string | null;
+        deletedAt: Date | null;
+        clinicId: string;
+        patientId: string;
+        doctorId: string;
+        reason: string | null;
+        notes: string | null;
+        status: string;
+        appointmentId: string | null;
+        priority: string;
+        dueDate: string;
+        reminderCount: number;
+        lastRemindedAt: Date | null;
+    }[]>;
+    getAllFollowUps(): Promise<({
+        patient: {
+            id: string;
+            patientCustomId: string | null;
+            aadhaarEncrypted: string | null;
+            aadhaarMasked: string | null;
+            aadhaarHash: string | null;
+            fullName: string;
+            email: string | null;
+            phone: string;
+            dateOfBirth: string | null;
+            gender: string | null;
+            bloodGroup: string | null;
+            address: string | null;
+            allergies: string;
+            medicalConditions: string;
+            emergencyContact: string | null;
+            treatmentStatus: string;
+            createdAt: Date;
+            updatedAt: Date;
+            createdBy: string | null;
+            deletedAt: Date | null;
+            clinicId: string | null;
+        };
+    } & {
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        createdBy: string | null;
+        deletedAt: Date | null;
+        clinicId: string;
+        patientId: string;
+        doctorId: string;
+        reason: string | null;
+        notes: string | null;
+        status: string;
+        appointmentId: string | null;
+        priority: string;
+        dueDate: string;
+        reminderCount: number;
+        lastRemindedAt: Date | null;
+    })[]>;
+    getOutboxLogs(): Promise<({
+        patient: {
+            fullName: string;
+        };
+    } & {
+        error: string | null;
+        id: string;
+        phone: string;
+        createdAt: Date;
+        patientId: string;
+        status: string;
+        type: string;
+        message: string;
+        sentAt: Date | null;
+    })[]>;
+    resendNotification(id: string): Promise<{
+        error: string | null;
+        id: string;
+        phone: string;
+        createdAt: Date;
+        patientId: string;
+        status: string;
+        type: string;
+        message: string;
+        sentAt: Date | null;
+    }>;
+    sendManualWhatsApp(patientId: string, message: string, clinicId?: string | null): Promise<{
+        error: string | null;
+        id: string;
+        phone: string;
+        createdAt: Date;
+        patientId: string;
+        status: string;
+        type: string;
+        message: string;
+        sentAt: Date | null;
+    }>;
+}

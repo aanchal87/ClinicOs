@@ -1,0 +1,100 @@
+import { PrismaService } from '../prisma.service';
+import { CryptoService } from '../auth/crypto.service';
+import { AuditLogService } from '../common/audit-log/audit-log.service';
+import { NotificationService } from '../notification/notification.service';
+export declare class PatientService {
+    private prisma;
+    private cryptoService;
+    private auditLogService;
+    private notificationService;
+    private storageProvider;
+    private readonly logger;
+    constructor(prisma: PrismaService, cryptoService: CryptoService, auditLogService: AuditLogService, notificationService: NotificationService, storageProvider: any);
+    private mapPatient;
+    searchPatients(query: string, clinicId?: string): Promise<any>;
+    checkAadhaarExists(aadhaar: string): Promise<{
+        exists: boolean;
+        patient?: undefined;
+    } | {
+        exists: boolean;
+        patient: {
+            id: string;
+            patientCustomId: string | null;
+            aadhaarMasked: string | null;
+            fullName: string;
+            phone: string;
+            clinicId: string | null;
+        };
+    }>;
+    getPatientHistory(patientId: string, clinicId?: string): Promise<any>;
+    createPatient(dto: any, clinicId?: string, userPayload?: any): Promise<any>;
+    getPatientById(id: string, clinicId?: string): Promise<any>;
+    updatePatient(id: string, dto: any, clinicId?: string, userPayload?: any): Promise<any>;
+    createMedicalRecord(patientId: string, dto: any, clinicId?: string, userPayload?: any): Promise<{
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        createdBy: string | null;
+        deletedAt: Date | null;
+        clinicId: string;
+        doctorId: string;
+        patientId: string;
+        appointmentId: string | null;
+        visitId: string | null;
+        chiefComplaint: string;
+        historyOfPresent: string | null;
+        examinationFindings: string | null;
+        diagnosis: string;
+        treatmentPlan: string;
+        skinType: string | null;
+        lesionType: string | null;
+        bodyArea: string | null;
+    }>;
+    uploadClinicalPhoto(patientId: string, dto: any, clinicId?: string, userPayload?: any): Promise<{
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        createdBy: string | null;
+        deletedAt: Date | null;
+        clinicId: string;
+        takenAt: Date;
+        patientId: string;
+        notes: string | null;
+        bodyArea: string | null;
+        medicalRecordId: string | null;
+        photoUrl: string;
+        thumbnailUrl: string | null;
+        photoType: string;
+    }>;
+    uploadClinicalPhotoFile(patientId: string, file: any, dto: any, clinicId?: string, userPayload?: any): Promise<{
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        createdBy: string | null;
+        deletedAt: Date | null;
+        clinicId: string;
+        takenAt: Date;
+        patientId: string;
+        notes: string | null;
+        bodyArea: string | null;
+        medicalRecordId: string | null;
+        photoUrl: string;
+        thumbnailUrl: string | null;
+        photoType: string;
+    }>;
+    closeVisit(visitId: string): Promise<{
+        id: string;
+        createdAt: Date;
+        updatedAt: Date;
+        createdBy: string | null;
+        deletedAt: Date | null;
+        clinicId: string | null;
+        patientId: string;
+        status: string;
+        notes: string | null;
+        appointmentId: string | null;
+        reason: string | null;
+        tokenId: string | null;
+        closedAt: Date | null;
+    }>;
+}

@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 import { BadRequestException, Controller, Post, Get, Put, Body, Query, Param, UseGuards, Req, UploadedFile, UseInterceptors } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
-=======
-import { Controller, Post, Get, Put, Body, Query, Param, UseGuards, Req } from '@nestjs/common';
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
 import { PatientService } from './patient.service';
 import { ThrottlerGuard, Throttle } from '@nestjs/throttler';
 import { Permissions } from '../auth/permissions.decorator';
@@ -75,11 +71,7 @@ export class PatientController {
   }
 
   @Post(':id/photos')
-<<<<<<< HEAD
   @Permissions('CREATE_CONSULTATIONS')
-=======
-  @Permissions('UPDATE_PATIENTS')
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
   async addPhoto(
     @Param('id') id: string,
     @Body() dto: any,
@@ -89,7 +81,6 @@ export class PatientController {
     const clinicId = user.role === 'SUPER_ADMIN' ? undefined : user.clinicId;
     return this.patientService.uploadClinicalPhoto(id, dto, clinicId, user);
   }
-<<<<<<< HEAD
 
   @Post(':id/photos/upload')
   @Permissions('CREATE_CONSULTATIONS')
@@ -112,6 +103,4 @@ export class PatientController {
     const clinicId = user.role === 'SUPER_ADMIN' ? undefined : user.clinicId;
     return this.patientService.uploadClinicalPhotoFile(id, file, dto, clinicId, user);
   }
-=======
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
 }

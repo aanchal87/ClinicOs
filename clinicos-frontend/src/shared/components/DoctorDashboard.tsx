@@ -76,7 +76,6 @@ export default function DoctorDashboard() {
   const calledTokens = nextTokens.filter((t: any) => t.status === 'called');
 
   return (
-<<<<<<< HEAD
     <div className="flex flex-col gap-5 sm:gap-6 max-w-[1200px] mx-auto relative">
       {/* Header title */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-2">
@@ -87,18 +86,6 @@ export default function DoctorDashboard() {
           </h1>
           <p className="text-sm text-clinic-text-secondary mt-1.5">
             Your active consultation, waiting patients, and clinical reviews.
-=======
-    <div className="flex flex-col gap-8 max-w-[1200px] mx-auto relative p-4">
-      {/* Header title */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-clinic-border pb-4">
-        <div>
-          <h1 className="text-xl font-bold tracking-tight text-clinic-text-primary flex items-center gap-2">
-            <ClipboardList className="h-5 w-5 text-clinic-accent" />
-            <span>Clinical Command Center</span>
-          </h1>
-          <p className="text-xs text-clinic-text-secondary mt-1">
-            Real-time telemetry and operational workflow for active clinical consultations.
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
           </p>
         </div>
 
@@ -110,25 +97,15 @@ export default function DoctorDashboard() {
             disabled={isFetching}
           >
             <RefreshCw className={`h-3.5 w-3.5 ${isFetching ? 'animate-spin' : ''}`} />
-<<<<<<< HEAD
             <span>{isFetching ? 'Syncing...' : 'Refresh today'}</span>
-=======
-            <span>{isFetching ? 'Syncing...' : 'Sync Telemetry'}</span>
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
           </Button>
         </div>
       </div>
 
       {/* STATS SECTION */}
-<<<<<<< HEAD
       <section aria-label="Clinical overview" className="grid grid-cols-2 xl:grid-cols-4 gap-3 sm:gap-4">
         {isLoadingStats ? (
           Array.from({ length: 4 }).map((_, i) => (
-=======
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-        {isLoadingStats ? (
-          Array.from({ length: 6 }).map((_, i) => (
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
             <div key={i} className="bg-clinic-surface border border-clinic-border rounded-clinic-12 p-4 shadow-sm h-[92px] flex flex-col justify-between">
               <Skeleton className="h-3 w-16" />
               <Skeleton className="h-6 w-12 mt-2" />
@@ -140,30 +117,17 @@ export default function DoctorDashboard() {
           </div>
         ) : (
           [
-<<<<<<< HEAD
             { label: "Appointments", value: stats?.todaysAppointments ?? 0, icon: CalendarDays, color: "text-clinic-accent bg-clinic-accent/10" },
             { label: "Active Patients", value: stats?.activePatients ?? 0, icon: Users, color: "text-clinic-success bg-clinic-success/10" },
             { label: "Follow-Ups Due", value: stats?.followUpsDue ?? 0, icon: Clock, color: "text-clinic-warning bg-clinic-warning/10" },
             { label: "Lab Reviews", value: stats?.pendingLabReviews ?? 0, icon: Activity, color: "text-rose-500 bg-rose-500/10" }
-=======
-            { label: "Today's Appointments", value: stats?.todaysAppointments ?? 0, icon: CalendarDays, color: "text-clinic-accent bg-clinic-accent/10" },
-            { label: "Active Patients", value: stats?.activePatients ?? 0, icon: Users, color: "text-clinic-success bg-clinic-success/10" },
-            { label: "Follow-Ups Due", value: stats?.followUpsDue ?? 0, icon: Clock, color: "text-clinic-warning bg-clinic-warning/10" },
-            { label: "Pending Lab Reviews", value: stats?.pendingLabReviews ?? 0, icon: Activity, color: "text-rose-500 bg-rose-500/10" },
-            { label: "Completed Consults", value: stats?.completedConsultations ?? 0, icon: CheckCircle, color: "text-emerald-500 bg-emerald-500/10" },
-            { label: "Today's Revenue", value: `₹${stats?.revenue ?? 0}`, icon: DollarSign, color: "text-clinic-accent bg-clinic-accent/10" }
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
           ].map((item, idx) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.05 }}
-<<<<<<< HEAD
               className="bg-clinic-surface border border-clinic-border/80 rounded-2xl p-4 sm:p-5 shadow-sm shadow-[#123b37]/[0.025] flex flex-col justify-between min-h-[108px]"
-=======
-              className="bg-clinic-surface border border-clinic-border rounded-clinic-12 p-4 shadow-sm flex flex-col justify-between"
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
             >
               <div className="flex justify-between items-start">
                 <span className="text-[10px] font-semibold text-clinic-text-secondary uppercase tracking-wider line-clamp-2">
@@ -179,7 +143,6 @@ export default function DoctorDashboard() {
             </motion.div>
           ))
         )}
-<<<<<<< HEAD
       </section>
 
       {/* PRIORITY 1: ACTIVE PATIENT */}
@@ -188,16 +151,6 @@ export default function DoctorDashboard() {
           <h2 className="text-xs font-bold uppercase tracking-wider text-clinic-text-secondary flex items-center gap-1.5">
             <Activity className="h-3.5 w-3.5 text-clinic-accent" />
             <span>Current consultation</span>
-=======
-      </div>
-
-      {/* PRIORITY 1: ACTIVE PATIENT */}
-      <section className="bg-clinic-surface border border-clinic-border rounded-clinic-14 p-6 shadow-sm flex flex-col gap-4">
-        <div className="flex justify-between items-center border-b border-clinic-border pb-3">
-          <h2 className="text-xs font-bold uppercase tracking-wider text-clinic-text-secondary flex items-center gap-1.5">
-            <Activity className="h-3.5 w-3.5 text-clinic-accent animate-pulse" />
-            <span>Priority 1: Current Active Patient</span>
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
           </h2>
           {!isLoadingQueue && currentPatient && (
             <Badge variant="success">
@@ -288,7 +241,6 @@ export default function DoctorDashboard() {
             </div>
           </div>
         ) : (
-<<<<<<< HEAD
           <div className="min-h-32 text-clinic-text-secondary text-xs flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-5">
             <div className="h-10 w-10 rounded-xl bg-clinic-bg flex items-center justify-center shrink-0">
               <Clock className="h-5 w-5 text-clinic-accent" />
@@ -296,13 +248,6 @@ export default function DoctorDashboard() {
             <div className="text-center sm:text-left">
               <p className="font-semibold text-clinic-text-primary">Ready for the next patient</p>
               <p className="text-[11px] text-clinic-text-secondary mt-1">The waiting queue is listed below.</p>
-=======
-          <div className="py-8 text-center text-clinic-text-secondary text-xs flex flex-col items-center justify-center gap-3">
-            <Clock className="h-8 w-8 text-clinic-border" />
-            <div>
-              <p className="font-semibold text-clinic-text-primary">No active patient called to room</p>
-              <p className="text-[10px] text-clinic-text-secondary mt-0.5">Call the next patient from the waiting queue below.</p>
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
             </div>
             {waitingTokens.length > 0 && (
               <Button 
@@ -318,15 +263,9 @@ export default function DoctorDashboard() {
       </section>
 
       {/* Grid splits */}
-<<<<<<< HEAD
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-5 items-start">
         {/* WAITING QUEUE */}
         <section className="bg-clinic-surface border border-clinic-border/80 rounded-2xl p-4 sm:p-5 shadow-sm flex flex-col gap-4 min-w-0">
-=======
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-        {/* WAITING QUEUE */}
-        <section className="bg-clinic-surface border border-clinic-border rounded-clinic-14 p-6 shadow-sm flex flex-col gap-4 min-h-[350px]">
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
           <div className="flex justify-between items-center border-b border-clinic-border pb-3">
             <h2 className="text-xs font-bold uppercase tracking-wider text-clinic-text-secondary">
               Lobby Queue
@@ -355,15 +294,9 @@ export default function DoctorDashboard() {
                 Failed to load queue.
               </div>
             ) : waitingTokens.length === 0 ? (
-<<<<<<< HEAD
               <div className="min-h-32 text-center text-clinic-text-secondary text-xs flex flex-col items-center justify-center gap-2">
                 <div className="h-10 w-10 rounded-xl bg-clinic-bg flex items-center justify-center"><Users className="h-5 w-5 text-clinic-accent" /></div>
                 <span className="font-semibold text-clinic-text-primary">No one is waiting</span>
-=======
-              <div className="py-16 text-center text-clinic-text-secondary text-xs flex flex-col items-center justify-center gap-2">
-                <Users className="h-8 w-8 text-clinic-border" />
-                <span className="font-semibold text-clinic-text-primary">Lobby queue is clear</span>
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
               </div>
             ) : (
               waitingTokens.map((tok: any) => (
@@ -414,11 +347,7 @@ export default function DoctorDashboard() {
         </section>
 
         {/* TODAY'S APPOINTMENTS */}
-<<<<<<< HEAD
         <section className="bg-clinic-surface border border-clinic-border/80 rounded-2xl p-4 sm:p-5 shadow-sm flex flex-col gap-4 min-w-0">
-=======
-        <section className="bg-clinic-surface border border-clinic-border rounded-clinic-14 p-6 shadow-sm flex flex-col gap-4 min-h-[350px]">
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
           <div className="flex justify-between items-center border-b border-clinic-border pb-3">
             <h2 className="text-xs font-bold uppercase tracking-wider text-clinic-text-secondary">
               Today's Appointments
@@ -454,11 +383,7 @@ export default function DoctorDashboard() {
                   <div className="min-w-0 flex flex-col">
                     <span className="text-xs font-bold text-clinic-text-primary truncate">{appt.patient?.fullName || appt.patientName}</span>
                     <span className="text-[10px] text-clinic-text-secondary truncate mt-0.5">
-<<<<<<< HEAD
                       Time: {appt.time} • Status: <span className="capitalize font-semibold text-clinic-accent">{(appt.status || 'scheduled').toLowerCase()}</span>
-=======
-                      Time: {appt.time} • Status: <span className="capitalize font-semibold text-clinic-accent">{appt.status.toLowerCase()}</span>
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
                     </span>
                   </div>
                   <Button
@@ -477,11 +402,7 @@ export default function DoctorDashboard() {
         </section>
 
         {/* AUDIT LOG / RECENT CLINIC ACTIVITY */}
-<<<<<<< HEAD
         <section className="bg-clinic-surface border border-clinic-border/80 rounded-2xl p-4 sm:p-5 shadow-sm flex flex-col gap-4">
-=======
-        <section className="bg-clinic-surface border border-clinic-border rounded-clinic-14 p-6 shadow-sm flex flex-col gap-4 min-h-[350px]">
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
           <div className="flex justify-between items-center border-b border-clinic-border pb-3">
             <h2 className="text-xs font-bold uppercase tracking-wider text-clinic-text-secondary">
               Recent Clinic Activity
@@ -505,11 +426,7 @@ export default function DoctorDashboard() {
                 Failed to load activities.
               </div>
             ) : recentActivity.length === 0 ? (
-<<<<<<< HEAD
               <div className="min-h-32 text-center text-clinic-text-secondary text-xs italic flex items-center justify-center">
-=======
-              <div className="py-16 text-center text-clinic-text-secondary text-xs italic">
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
                 No recent clinic actions logged.
               </div>
             ) : (

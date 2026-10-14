@@ -20,11 +20,7 @@ import {
   usePatients, useCreatePatient, usePatient, 
   useConsultations, useLabs, useGallery,
   useDocuments, useUploadDocument, useDeleteDocument,
-<<<<<<< HEAD
   useAadhaarCheck, usePatientHistory, useSendManualWhatsapp, useUploadClinicalPhoto
-=======
-  useAadhaarCheck, usePatientHistory, useSendManualWhatsapp
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
 } from '@/shared/hooks/useClinicApi';
 import Button from '@/shared/components/ui/Button';
 import Input from '@/shared/components/ui/Input';
@@ -57,7 +53,6 @@ const patientSchema = z.object({
 
 type PatientFormInputs = z.infer<typeof patientSchema>;
 
-<<<<<<< HEAD
 function getClinicalPhotoUrl(photoUrl?: string) {
   if (!photoUrl) return '';
   if (/^(https?:|data:|blob:)/i.test(photoUrl)) return photoUrl;
@@ -65,8 +60,6 @@ function getClinicalPhotoUrl(photoUrl?: string) {
   return `${apiUrl.replace(/\/$/, '')}/${photoUrl.replace(/^\/+/, '')}`;
 }
 
-=======
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
 export default function PatientsPage() {
   const router = useRouter();
   const activePatientId = useUiStore((state) => state.activePatientId);
@@ -101,14 +94,11 @@ export default function PatientsPage() {
 
   // Gallery slider state
   const [sliderVal, setSliderVal] = useState<number>(50);
-<<<<<<< HEAD
   const [galleryBodyArea, setGalleryBodyArea] = useState('Face');
   const [galleryNotes, setGalleryNotes] = useState('');
   const [beforePhotoFile, setBeforePhotoFile] = useState<File | null>(null);
   const [afterPhotoFile, setAfterPhotoFile] = useState<File | null>(null);
   const [galleryUploadError, setGalleryUploadError] = useState('');
-=======
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
 
   // WhatsApp States
   const [isSendingWhatsapp, setIsSendingWhatsapp] = useState(false);
@@ -144,7 +134,6 @@ export default function PatientsPage() {
   const createPatientMutation = useCreatePatient();
   const uploadDocMutation = useUploadDocument();
   const deleteDocMutation = useDeleteDocument();
-<<<<<<< HEAD
   const uploadClinicalPhotoMutation = useUploadClinicalPhoto();
 
   const handleGalleryUpload = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -186,8 +175,6 @@ export default function PatientsPage() {
       setGalleryUploadError(Array.isArray(message) ? message.join(', ') : message || 'Could not upload the treatment images.');
     }
   };
-=======
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
 
   // Aadhaar verification states
   const [aadhaarCheckResult, setAadhaarCheckResult] = useState<{ exists: boolean; patient?: any } | null>(null);
@@ -674,20 +661,12 @@ export default function PatientsPage() {
                   <Input label="Phone Number" placeholder="e.g. +1 (555) 000-0000" error={errors.phone?.message} {...register('phone')} />
                   <Input label="Email Address" type="email" placeholder="e.g. jane@example.com" error={errors.email?.message} {...register('email')} />
                   
-<<<<<<< HEAD
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-=======
-                  <div className="grid grid-cols-2 gap-4">
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
                     <Input label="Date of Birth" type="date" error={errors.dob?.message} {...register('dob')} />
                     <Select label="Gender" options={[{value: 'Female', label: 'Female'}, {value: 'Male', label: 'Male'}, {value: 'Other', label: 'Other'}]} error={errors.gender?.message} {...register('gender')} />
                   </div>
 
-<<<<<<< HEAD
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-=======
-                  <div className="grid grid-cols-2 gap-4">
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
                     <Input label="Blood Group" placeholder="e.g. O+" error={errors.bloodGroup?.message} {...register('bloodGroup')} />
                     <Select label="Treatment Status" options={[{value: 'Consultation', label: 'Consultation'}, {value: 'Active Treatment', label: 'Active Treatment'}, {value: 'Maintenance', label: 'Maintenance'}, {value: 'Completed', label: 'Completed'}]} error={errors.treatmentStatus?.message} {...register('treatmentStatus')} />
                   </div>
@@ -949,17 +928,10 @@ export default function PatientsPage() {
       </div>
 
       {/* Flagship 3-Column Layout */}
-<<<<<<< HEAD
       <div className="grid grid-cols-1 2xl:grid-cols-[300px_minmax(0,1fr)_340px] gap-4 sm:gap-6 items-start max-w-[1800px] w-full min-w-0">
         
         {/* LEFT RAIL (320px): Demographic & Warnings */}
         <section className="bg-clinic-surface border border-clinic-border rounded-2xl p-4 sm:p-6 shadow-sm flex flex-col gap-5 w-full 2xl:col-start-1">
-=======
-      <div className="grid grid-cols-1 xl:grid-cols-[320px_1fr_360px] gap-8 items-start max-w-[1800px] w-full">
-        
-        {/* LEFT RAIL (320px): Demographic & Warnings */}
-        <section className="bg-clinic-surface border border-clinic-border rounded-clinic-14 p-6 shadow-sm flex flex-col gap-6 w-full">
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
           <div className="flex flex-col items-center text-center pb-6 border-b border-clinic-border">
             <Avatar name={activePatient.name} src={activePatient.avatarUrl} size="lg" className="shadow-md mb-4" />
             <h2 className="text-lg font-bold tracking-tight text-clinic-text-primary">{activePatient.name}</h2>
@@ -1040,11 +1012,7 @@ export default function PatientsPage() {
         </section>
 
         {/* CENTER WORKSPACE (Radix Tabs Content) */}
-<<<<<<< HEAD
         <section className="min-w-0 2xl:col-start-2">
-=======
-        <section className="min-w-0">
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
           <Tabs.Root value={activeTab} onValueChange={setActiveTab} className="w-full flex flex-col gap-6">
             {/* Tabs List Navigation */}
             <Tabs.List className="flex gap-2 border-b border-clinic-border overflow-x-auto pb-px scrollbar-none">
@@ -1249,11 +1217,7 @@ export default function PatientsPage() {
                       <span>Date: {c.date} • Token {c.tokenNumber}</span>
                       <span>By: Dr. Adrian Vance</span>
                     </div>
-<<<<<<< HEAD
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs mt-1">
-=======
-                    <div className="grid grid-cols-2 gap-4 text-xs mt-1">
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
                       <p><strong>Subjective:</strong> {c.soapNotes.subjective}</p>
                       <p><strong>Objective:</strong> {c.soapNotes.objective}</p>
                       <p><strong>Assessment:</strong> {c.soapNotes.assessment}</p>
@@ -1509,7 +1473,6 @@ export default function PatientsPage() {
               </div>
             </Tabs.Content>
 
-<<<<<<< HEAD
             {/* TAB 9: BEFORE / AFTER GALLERY */}
             <Tabs.Content value="gallery" className="focus:outline-none flex flex-col gap-6">
               <div className="bg-clinic-surface border border-clinic-border rounded-clinic-14 p-5 shadow-sm flex flex-col gap-4">
@@ -1570,10 +1533,6 @@ export default function PatientsPage() {
                 )}
               </div>
 
-=======
-            {/* TAB 9: GALLERY GALLERY SLIDER */}
-            <Tabs.Content value="gallery" className="focus:outline-none flex flex-col gap-6">
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
               {activeGallery.length === 0 ? (
                 <div className="py-12 bg-clinic-surface border border-clinic-border rounded-clinic-14 text-center text-clinic-text-secondary text-xs italic">
                   No treatment comparison images logged.
@@ -1588,19 +1547,11 @@ export default function PatientsPage() {
                   </div>
 
                   <div className="relative w-full max-w-xl mx-auto h-[350px] border border-clinic-border rounded-clinic-14 overflow-hidden select-none shadow-md bg-zinc-950">
-<<<<<<< HEAD
                     <img src={getClinicalPhotoUrl(activeGallery[0].beforeUrl)} alt="Before" className="absolute inset-0 w-full h-full object-cover pointer-events-none" />
                     <div className="absolute left-4 top-4 z-10 bg-black/60 px-2 py-0.5 rounded text-[10px] font-bold text-white uppercase tracking-wider">Before</div>
 
                     <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none" style={{ clipPath: `inset(0 0 0 ${sliderVal}%)` }}>
                       <img src={getClinicalPhotoUrl(activeGallery[0].afterUrl)} alt="After" className="absolute inset-0 w-full h-full object-cover" style={{ width: '100%', height: '100%' }} />
-=======
-                    <img src={activeGallery[0].beforeUrl} alt="Before" className="absolute inset-0 w-full h-full object-cover pointer-events-none" />
-                    <div className="absolute left-4 top-4 z-10 bg-black/60 px-2 py-0.5 rounded text-[10px] font-bold text-white uppercase tracking-wider">Before</div>
-
-                    <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none" style={{ clipPath: `inset(0 0 0 ${sliderVal}%)` }}>
-                      <img src={activeGallery[0].afterUrl} alt="After" className="absolute inset-0 w-full h-full object-cover" style={{ width: '100%', height: '100%' }} />
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
                     </div>
                     <div className="absolute right-4 top-4 z-10 bg-clinic-accent px-2 py-0.5 rounded text-[10px] font-bold text-white uppercase tracking-wider">After</div>
 
@@ -1619,11 +1570,7 @@ export default function PatientsPage() {
         </section>
 
         {/* RIGHT RAIL (360px): Quick Summaries */}
-<<<<<<< HEAD
         <section className="flex flex-col gap-4 sm:gap-6 w-full 2xl:col-start-3 2xl:row-start-1">
-=======
-        <section className="flex flex-col gap-6 w-full">
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
           {/* Upcoming followups */}
           <div className="bg-clinic-surface border border-clinic-border rounded-clinic-14 p-5 shadow-sm flex flex-col gap-3">
             <h3 className="text-xs font-bold uppercase tracking-wider text-clinic-text-secondary border-b border-clinic-border pb-2">Upcoming Recalls</h3>

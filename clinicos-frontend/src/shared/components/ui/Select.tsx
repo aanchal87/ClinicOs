@@ -15,11 +15,7 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
     return (
       <div className="w-full flex flex-col gap-1.5">
         {label && (
-<<<<<<< HEAD
           <label className="text-xs font-medium tracking-wide text-clinic-text-primary">
-=======
-          <label className="text-xs font-semibold uppercase tracking-wider text-clinic-text-secondary">
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
             {label}
           </label>
         )}
@@ -28,11 +24,7 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
             ref={ref}
             className={twMerge(
               clsx(
-<<<<<<< HEAD
                 "w-full px-3.5 py-2.5 text-sm bg-clinic-surface text-clinic-text-primary border border-clinic-border rounded-xl shadow-sm transition-colors focus:outline-none focus:ring-2 focus:ring-clinic-accent/20 focus:border-clinic-accent disabled:opacity-50 disabled:pointer-events-none appearance-none cursor-pointer",
-=======
-                "w-full px-3 py-2 text-sm bg-clinic-surface text-clinic-text-primary border border-clinic-border rounded-clinic-10 transition-colors focus:outline-none focus:ring-1 focus:ring-clinic-accent focus:border-clinic-accent disabled:opacity-50 disabled:pointer-events-none appearance-none cursor-pointer",
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
                 error && "border-clinic-danger focus:ring-clinic-danger",
                 className
               )

@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-<<<<<<< HEAD
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { LayoutDashboard, Users, Clock, CalendarDays, Image as ImageIcon, MoreHorizontal } from 'lucide-react';
@@ -20,16 +19,6 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
     { path: '/calendar', label: 'Schedule', icon: CalendarDays },
     { path: role === 'receptionist' ? '/followups' : '/gallery', label: 'More', icon: MoreHorizontal },
   ];
-=======
-import { motion } from 'framer-motion';
-import SidebarNav from './SidebarNav';
-import HeaderBar from './HeaderBar';
-import SearchBar from './SearchBar';
-import { useUiStore } from '../stores/uiStore';
-
-export default function AppLayout({ children }: { children: React.ReactNode }) {
-  const collapsed = useUiStore((state) => state.sidebarCollapsed);
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
 
   return (
     <div className="min-h-screen bg-clinic-bg flex flex-row">
@@ -37,20 +26,11 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
       <SidebarNav />
 
       {/* Main Workspace Area */}
-<<<<<<< HEAD
       <div className="flex-1 flex flex-col min-w-0 min-h-screen lg:ml-20 xl:ml-[280px] transition-[margin] duration-200">
-=======
-      <motion.div
-        animate={{ paddingLeft: collapsed ? 80 : 280 }}
-        transition={{ duration: 0.18, ease: [0.16, 1, 0.3, 1] }}
-        className="flex-1 flex flex-col min-w-0 min-h-screen"
-      >
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
         {/* Top Header */}
         <HeaderBar />
 
         {/* Dynamic page content */}
-<<<<<<< HEAD
         <main className="flex-1 overflow-y-auto overflow-x-hidden px-3 py-4 sm:px-5 sm:py-6 lg:px-7 xl:px-8 w-full mx-auto pb-[calc(5.5rem+env(safe-area-inset-bottom))] lg:pb-8">
           {children}
         </main>
@@ -67,12 +47,6 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
           </Link>;
         })}
       </nav>
-=======
-        <main className="flex-1 overflow-y-auto overflow-x-hidden p-8 max-w-[1600px] w-full mx-auto">
-          {children}
-        </main>
-      </motion.div>
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
 
       {/* Global Cmd+K Fuzzy Finder Modal */}
       <SearchBar />

@@ -299,7 +299,6 @@ export default function ReceptionDashboard() {
   // Removed page-level error check to allow independent card rendering
 
   return (
-<<<<<<< HEAD
     <div className="flex flex-col gap-5 sm:gap-6 max-w-[1200px] mx-auto relative">
       {/* Header title */}
       <div className="flex flex-col xl:flex-row xl:items-center xl:justify-between gap-4 pb-1">
@@ -317,35 +316,6 @@ export default function ReceptionDashboard() {
           <Button
             onClick={() => handleOpenDrawer('register')}
             className="flex-1 sm:flex-none flex items-center gap-1.5 text-xs font-semibold bg-clinic-accent text-white hover:bg-clinic-accent/90"
-=======
-    <div className="flex flex-col gap-8 max-w-[1200px] mx-auto relative p-4">
-      {/* Header title */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-clinic-border pb-4">
-        <div>
-          <h1 className="text-xl font-bold tracking-tight text-clinic-text-primary flex items-center gap-2">
-            <Users className="h-5 w-5 text-clinic-accent" />
-            <span>Reception Dashboard</span>
-          </h1>
-          <p className="text-xs text-clinic-text-secondary mt-1">
-            Check-ins, appointments, and token management workflow console.
-          </p>
-        </div>
-
-        <div className="flex items-center gap-3 shrink-0">
-          <Button
-            variant="ghost"
-            onClick={() => refetch()}
-            className="flex items-center gap-1.5 text-xs text-clinic-text-secondary hover:text-clinic-text-primary mr-2"
-            disabled={isFetching}
-          >
-            <RefreshCw className={`h-3.5 w-3.5 ${isFetching ? 'animate-spin' : ''}`} />
-            <span>Sync</span>
-          </Button>
-
-          <Button
-            onClick={() => handleOpenDrawer('register')}
-            className="flex items-center gap-1.5 text-xs font-semibold bg-clinic-accent text-white hover:bg-clinic-accent/90"
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
           >
             <PlusCircle className="h-4 w-4" />
             <span>Register Patient</span>
@@ -353,11 +323,7 @@ export default function ReceptionDashboard() {
           <Button
             variant="secondary"
             onClick={() => handleOpenDrawer('appointment')}
-<<<<<<< HEAD
             className="flex-1 sm:flex-none flex items-center gap-1.5 text-xs font-semibold border-clinic-border text-clinic-text-primary bg-clinic-surface hover:bg-clinic-bg"
-=======
-            className="flex items-center gap-1.5 text-xs font-semibold border-clinic-border text-clinic-text-primary bg-clinic-surface hover:bg-clinic-bg"
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
           >
             <CalendarDays className="h-4 w-4" />
             <span>Book Appointment</span>
@@ -365,11 +331,7 @@ export default function ReceptionDashboard() {
           <Button
             variant="secondary"
             onClick={() => handleOpenDrawer('token')}
-<<<<<<< HEAD
             className="flex-1 sm:flex-none flex items-center gap-1.5 text-xs font-semibold border-clinic-border text-clinic-text-primary bg-clinic-surface hover:bg-clinic-bg"
-=======
-            className="flex items-center gap-1.5 text-xs font-semibold border-clinic-border text-clinic-text-primary bg-clinic-surface hover:bg-clinic-bg"
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
           >
             <Activity className="h-4 w-4" />
             <span>Generate Token</span>
@@ -378,15 +340,9 @@ export default function ReceptionDashboard() {
       </div>
 
       {/* STATS SECTION */}
-<<<<<<< HEAD
       <section aria-label="Front desk overview" className="grid grid-cols-2 xl:grid-cols-4 gap-3 sm:gap-4">
         {isLoadingStats ? (
           Array.from({ length: 4 }).map((_, i) => (
-=======
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        {isLoadingStats ? (
-          Array.from({ length: 8 }).map((_, i) => (
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
             <div key={i} className="bg-clinic-surface border border-clinic-border rounded-clinic-12 p-4 shadow-sm h-[92px] flex flex-col justify-between">
               <Skeleton className="h-3 w-16" />
               <Skeleton className="h-6 w-12 mt-2" />
@@ -400,28 +356,15 @@ export default function ReceptionDashboard() {
           [
             { label: "Today's Appointments", value: stats?.todaysAppointments ?? 0, icon: CalendarDays, color: "text-clinic-accent bg-clinic-accent/10" },
             { label: "Checked In Today", value: stats?.checkedInToday ?? 0, icon: CheckCircle2, color: "text-clinic-success bg-clinic-success/10" },
-<<<<<<< HEAD
             { label: "Waiting Patients", value: stats?.waitingPatients ?? 0, icon: Clock, color: "text-clinic-warning bg-clinic-warning/10" },
             { label: "Follow-Up Calls", value: stats?.followUpCalls ?? 0, icon: PhoneCall, color: "text-indigo-500 bg-indigo-500/10" }
-=======
-            { label: "New Registrations Today", value: stats?.newRegistrations ?? 0, icon: Users, color: "text-emerald-500 bg-emerald-500/10" },
-            { label: "Waiting Patients", value: stats?.waitingPatients ?? 0, icon: Clock, color: "text-clinic-warning bg-clinic-warning/10" },
-            { label: "Missed Appointments Today", value: stats?.missedAppointments ?? 0, icon: AlertCircle, color: "text-rose-500 bg-rose-500/10" },
-            { label: "Follow Up Calls Due", value: stats?.followUpCalls ?? 0, icon: PhoneCall, color: "text-indigo-500 bg-indigo-500/10" },
-            { label: "Payments Pending", value: stats?.paymentsPending ?? 0, icon: DollarSign, color: "text-amber-500 bg-amber-500/10" },
-            { label: "Total Registered Patients", value: patients.length, icon: FileText, color: "text-clinic-accent bg-clinic-accent/10" }
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
           ].map((item, idx) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.05 }}
-<<<<<<< HEAD
               className="bg-clinic-surface border border-clinic-border/80 rounded-2xl p-4 sm:p-5 shadow-sm flex flex-col justify-between min-h-[108px]"
-=======
-              className="bg-clinic-surface border border-clinic-border rounded-clinic-12 p-4 shadow-sm flex flex-col justify-between"
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
             >
               <div className="flex justify-between items-start">
                 <span className="text-[10px] font-semibold text-clinic-text-secondary uppercase tracking-wider">
@@ -437,19 +380,11 @@ export default function ReceptionDashboard() {
             </motion.div>
           ))
         )}
-<<<<<<< HEAD
       </section>
 
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 sm:gap-5 items-start">
         {/* TODAY'S APPOINTMENTS & SLOT CHECK-IN */}
         <section className="bg-clinic-surface border border-clinic-border/80 rounded-2xl p-4 sm:p-5 shadow-sm flex flex-col gap-4 min-w-0">
-=======
-      </div>
-
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-        {/* TODAY'S APPOINTMENTS & SLOT CHECK-IN */}
-        <section className="bg-clinic-surface border border-clinic-border rounded-clinic-14 p-6 shadow-sm flex flex-col gap-4 min-h-[350px]">
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
           <div className="flex justify-between items-center border-b border-clinic-border pb-3">
             <h2 className="text-xs font-bold uppercase tracking-wider text-clinic-text-secondary">
               Scheduled Slots & Patient Check-In
@@ -472,11 +407,7 @@ export default function ReceptionDashboard() {
                 Failed to load today's appointments.
               </div>
             ) : appointments.length === 0 ? (
-<<<<<<< HEAD
               <div className="min-h-32 text-center text-clinic-text-secondary text-xs flex flex-col items-center justify-center gap-2">
-=======
-              <div className="py-16 text-center text-clinic-text-secondary text-xs flex flex-col items-center justify-center gap-2">
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
                 <Calendar className="h-8 w-8 text-clinic-border" />
                 <span className="font-semibold text-clinic-text-primary">No appointments scheduled today</span>
               </div>
@@ -492,11 +423,7 @@ export default function ReceptionDashboard() {
                       Slot: {appt.time} • Phone: {appt.patient?.phone || appt.phone}
                     </span>
                     <span className="text-[10px] text-clinic-text-secondary mt-0.5">
-<<<<<<< HEAD
                       Status: <strong className="text-clinic-accent capitalize">{(appt.status || 'scheduled').toLowerCase()}</strong>
-=======
-                      Status: <strong className="text-clinic-accent capitalize">{appt.status.toLowerCase()}</strong>
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
                     </span>
                   </div>
 
@@ -522,11 +449,7 @@ export default function ReceptionDashboard() {
         </section>
 
         {/* QUEUE STATUS LIST */}
-<<<<<<< HEAD
         <section className="bg-clinic-surface border border-clinic-border/80 rounded-2xl p-4 sm:p-5 shadow-sm flex flex-col gap-4 min-w-0">
-=======
-        <section className="bg-clinic-surface border border-clinic-border rounded-clinic-14 p-6 shadow-sm flex flex-col gap-4 min-h-[350px]">
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
           <div className="flex justify-between items-center border-b border-clinic-border pb-3">
             <h2 className="text-xs font-bold uppercase tracking-wider text-clinic-text-secondary">
               Today's Lobby Queue Tokens
@@ -549,11 +472,7 @@ export default function ReceptionDashboard() {
                 Failed to load lobby queue tokens.
               </div>
             ) : queueStatus.length === 0 ? (
-<<<<<<< HEAD
               <div className="min-h-32 text-center text-clinic-text-secondary text-xs flex flex-col items-center justify-center gap-2">
-=======
-              <div className="py-16 text-center text-clinic-text-secondary text-xs flex flex-col items-center justify-center gap-2">
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
                 <Clock className="h-8 w-8 text-clinic-border" />
                 <span className="font-semibold text-clinic-text-primary">No queue tokens generated today</span>
               </div>
@@ -613,11 +532,7 @@ export default function ReceptionDashboard() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-<<<<<<< HEAD
               className="relative w-full max-w-[600px] bg-clinic-surface border-l border-clinic-border h-full p-4 sm:p-6 pt-[max(1rem,env(safe-area-inset-top))] pb-[max(1rem,env(safe-area-inset-bottom))] shadow-2xl flex flex-col z-10 overflow-y-auto"
-=======
-              className="relative w-full max-w-[600px] bg-clinic-surface border-l border-clinic-border h-full p-6 shadow-2xl flex flex-col z-10 overflow-y-auto"
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
             >
               {/* Header */}
               <div className="flex justify-between items-center border-b border-clinic-border pb-4 mb-6">
@@ -725,11 +640,7 @@ export default function ReceptionDashboard() {
                         Personal Information
                       </h3>
                       
-<<<<<<< HEAD
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-=======
-                      <div className="grid grid-cols-2 gap-4">
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
                         <Input 
                           label="Full Name *" 
                           placeholder="e.g. Jane Doe"
@@ -746,11 +657,7 @@ export default function ReceptionDashboard() {
                         />
                       </div>
 
-<<<<<<< HEAD
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-=======
-                      <div className="grid grid-cols-2 gap-4">
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
                         <Input 
                           label="Email" 
                           type="email"
@@ -767,11 +674,7 @@ export default function ReceptionDashboard() {
                         />
                       </div>
 
-<<<<<<< HEAD
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-=======
-                      <div className="grid grid-cols-2 gap-4">
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
                         <Select
                           label="Gender"
                           value={patientForm.gender}
@@ -811,11 +714,7 @@ export default function ReceptionDashboard() {
                         Medical Information
                       </h3>
 
-<<<<<<< HEAD
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-=======
-                      <div className="grid grid-cols-2 gap-4">
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
                         <Input 
                           label="Allergies (comma separated)" 
                           placeholder="e.g. Peanuts, Penicillin"
@@ -932,11 +831,7 @@ export default function ReceptionDashboard() {
                     ]}
                   />
 
-<<<<<<< HEAD
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-=======
-                  <div className="grid grid-cols-2 gap-4">
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
                     <Input 
                       label="Date" 
                       type="date"

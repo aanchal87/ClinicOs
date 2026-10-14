@@ -3,28 +3,19 @@
 import React, { useState, useEffect } from 'react';
 import { useQueryClient } from '@tanstack/react-query';
 import { Search, Bell, Activity, Clock } from 'lucide-react';
-<<<<<<< HEAD
 import { usePathname } from 'next/navigation';
-=======
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
 import { useUiStore } from '../stores/uiStore';
 import { useTokens, socket } from '../hooks/useClinicApi';
 import { AnimatePresence, motion } from 'framer-motion';
 import Badge from './ui/Badge';
-<<<<<<< HEAD
 import BrandLogo from './ui/BrandLogo';
-=======
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
 
 export default function HeaderBar() {
   const queryClient = useQueryClient();
   const setSearchOpen = useUiStore((state) => state.setSearchOpen);
   const role = useUiStore((state) => state.currentRole);
-<<<<<<< HEAD
   const pathname = usePathname();
   const pageTitle = pathname === '/dashboard' || pathname === '/' ? 'Overview' : ({ '/patients': 'Patients', '/queue': 'Queue manager', '/calendar': 'Calendar', '/consultations': 'Consultations', '/laboratory': 'Laboratory', '/followups': 'Follow-ups', '/gallery': 'Treatment gallery', '/reports': 'Analytics', '/notifications': 'Notifications', '/settings': 'Settings', '/audit-logs': 'Audit logs', '/users': 'User management' } as Record<string, string>)[pathname] || 'Clinic workspace';
-=======
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
   
   // Real-time query sync
   const { data: tokens = [] } = useTokens();
@@ -90,7 +81,6 @@ export default function HeaderBar() {
   const waitingCount = tokens.filter(t => t.status === 'waiting').length;
 
   return (
-<<<<<<< HEAD
     <header className="h-[76px] border-b border-clinic-border/80 bg-clinic-surface/90 backdrop-blur-xl flex items-center justify-between px-4 sm:px-6 lg:px-8 shrink-0 sticky top-0 relative z-20">
       {/* Left Search Trigger Pill */}
       <div className="flex items-center gap-4 min-w-0">
@@ -110,18 +100,6 @@ export default function HeaderBar() {
           <div className="flex items-center gap-2">
             <Search className="h-3.5 w-3.5" />
             <span className="hidden sm:inline">Search patient...</span>
-=======
-    <header className="h-16 border-b border-clinic-border bg-clinic-surface flex items-center justify-between px-8 shrink-0 relative z-20">
-      {/* Left Search Trigger Pill */}
-      <div className="flex items-center gap-4">
-        <button
-          onClick={() => setSearchOpen(true)}
-          className="flex items-center justify-between gap-3 px-3 py-1.5 w-64 bg-clinic-bg border border-clinic-border hover:border-zinc-300 dark:hover:border-zinc-700 text-clinic-text-secondary rounded-clinic-10 text-xs text-left cursor-pointer transition-colors shadow-inner"
-        >
-          <div className="flex items-center gap-2">
-            <Search className="h-3.5 w-3.5" />
-            <span>Search patient (Cmd+K)...</span>
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
           </div>
           <kbd className="hidden sm:inline-block bg-clinic-surface border border-clinic-border px-1.5 py-0.5 rounded text-[9px] font-bold shadow-sm">
             ⌘K
@@ -147,15 +125,9 @@ export default function HeaderBar() {
       </div>
 
       {/* Right Action & Global Token Widget Area */}
-<<<<<<< HEAD
       <div className="flex items-center gap-2 sm:gap-3">
         {/* Persistent Global Token Widget */}
         <div className="hidden sm:flex items-center gap-1.5 px-3 py-2 bg-clinic-bg/80 border border-clinic-border rounded-xl text-xs font-semibold select-none">
-=======
-      <div className="flex items-center gap-4">
-        {/* Persistent Global Token Widget */}
-        <div className="flex items-center gap-1.5 px-3 py-1 bg-clinic-bg border border-clinic-border rounded-clinic-10 text-xs font-semibold select-none shadow-sm">
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
           <div className="flex items-center gap-1">
             <span className="text-[10px] text-clinic-text-secondary uppercase">Current:</span>
             <span className={currentToken ? "text-clinic-accent font-extrabold" : "text-clinic-text-secondary"}>
@@ -179,22 +151,12 @@ export default function HeaderBar() {
         </div>
 
         {/* Role Indicator Pill */}
-<<<<<<< HEAD
         <div className="hidden md:flex items-center gap-2 px-3 py-2 bg-clinic-bg/80 border border-clinic-border text-clinic-text-secondary rounded-xl text-xs font-medium capitalize">
           <span className="h-2 w-2 rounded-full bg-clinic-success" />
           <span>{role.replace('_', ' ')} workspace</span>
         </div>
 
         <button aria-label="Notifications" className="p-2.5 text-clinic-text-secondary hover:text-clinic-text-primary hover:bg-clinic-bg rounded-xl border border-clinic-border bg-clinic-surface cursor-pointer relative">
-=======
-        <div className="flex items-center gap-1.5 px-2.5 py-1 bg-clinic-bg border border-clinic-border text-clinic-text-secondary rounded-full text-xs font-medium capitalize">
-          <span className="h-2 w-2 rounded-full bg-clinic-success animate-ping" />
-          <Clock className="h-3 w-3" />
-          <span>{role} Console</span>
-        </div>
-
-        <button className="p-2 text-clinic-text-secondary hover:text-clinic-text-primary hover:bg-clinic-bg rounded-full border border-clinic-border bg-clinic-surface shadow-sm cursor-pointer relative">
->>>>>>> acc950f8d764e6f4fab215397359f05c19cca2ec
           <Bell className="h-4 w-4" />
           <span className="absolute top-1 right-1 h-1.5 w-1.5 rounded-full bg-clinic-danger" />
         </button>
